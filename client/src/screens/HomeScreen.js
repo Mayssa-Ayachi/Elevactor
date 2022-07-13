@@ -7,6 +7,7 @@ import {
   TextInput,
 } from "react-native";
 import { Text, Button } from "react-native-elements";
+import { MaterialIcons } from "@expo/vector-icons";
 import TextIconInput from "../components/TextIconInput";
 const HomeScreen = (props) => {
   const [user, setUser] = useState("");
@@ -15,7 +16,7 @@ const HomeScreen = (props) => {
     <View>
       <Image style={styles.logo} source={require("../assets/loginLogo.png")} />
 
-      <Text h2 style={{ left: 20 }}>
+      <Text h2 style={{ left: 20, marginBottom: 20 }}>
         Connexion
       </Text>
       <TextIconInput
@@ -29,17 +30,39 @@ const HomeScreen = (props) => {
         onChange={setPassword}
         password
       />
+
+      <TouchableOpacity style={styles.center}>
+        <Text style={{ alignSelf: "flex-end", margin: 7, fontSize: 15 }}>
+          Mot de passe oublié ?
+        </Text>
+      </TouchableOpacity>
+
       <Button
         title="Connecter"
+        buttonStyle={{
+          borderRadius: "50%",
+        }}
         containerStyle={{
           marginHorizontal: 50,
           marginVertical: 10,
-          borderRadius: 50,
         }}
+        icon={
+          <MaterialIcons
+            name="navigate-next"
+            size={24}
+            color="white"
+            style={{ marginLeft: 130 }}
+          />
+        }
+        iconPosition="right"
         onPress={() => {
           console.log("the state is ", user);
         }}
       />
+
+      <TouchableOpacity style={styles.center}>
+        <Text style={styles.underlinedText}>Créer un compte</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -53,6 +76,12 @@ const styles = StyleSheet.create({
   },
   button: {
     color: "black",
+  },
+  underlinedText: {
+    alignSelf: "center",
+    fontSize: 17,
+    borderBottomColor: "#001AFF",
+    borderBottomWidth: 1,
   },
 });
 

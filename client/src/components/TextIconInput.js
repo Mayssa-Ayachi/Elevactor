@@ -9,7 +9,7 @@ import {
 import { EvilIcons } from "@expo/vector-icons";
 
 const TextIconInput = ({ label, icon, onChange, password }) => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   return (
     <View>
       <View style={styles.iconTextContainer}>
@@ -18,7 +18,7 @@ const TextIconInput = ({ label, icon, onChange, password }) => {
       </View>
       <View style={styles.iconTextContainer}>
         <TextInput
-          secureTextEntry={password && show}
+          secureTextEntry={password && !show}
           style={styles.input}
           onChangeText={onChange}
           autoCapitalize="none"
