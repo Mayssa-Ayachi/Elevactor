@@ -8,9 +8,10 @@ export default function MusicIcon(){
         <View>
             <TouchableOpacity 
                 style={styles.button}
+                onPress = {prevState => {setMusic(!prevState)}}
             >
             <FontAwesome5 
-                    name={'music'}
+                    name={'music'} 
                     color={'#fff'}
                     size={20}
                 />
@@ -21,12 +22,15 @@ export default function MusicIcon(){
 
 const styles = StyleSheet.create({
     button :{
-        flex:1,
-        width : 60,
-        height:60,
+        width : 40,
+        height:40,
         borderRadius:30,
         backgroundColor :'#00B4FB',
         alignItems:'center',
-        position:'absolute',
+        justifyContent:'center',
+        position:'relative',
+        left:'85%',
+        top: '-75%',
+        
     }
 })

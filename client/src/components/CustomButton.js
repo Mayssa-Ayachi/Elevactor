@@ -1,5 +1,5 @@
 import React from "react";
-import { Text , StyleSheet, View} from "react-native";
+import { Text , StyleSheet, View,Alert} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { 
     DaysOne_400Regular 
@@ -8,18 +8,28 @@ import {
   import { useFonts } from 'expo-font';
   import AppLoading from 'expo-app-loading';
 
-export default function CustomButton(){
+  
+
+export default function CustomButton(props){
 
     let [fontsLoaded,error] = useFonts({
         DaysOne_400Regular
     })
+
     if (!fontsLoaded){
         return <AppLoading />
     }
+    
     return(
         <View style={styles.buttonContainer}>
         <TouchableOpacity 
-            style={styles.button}
+            onPress={props.verif}
+            style={[
+                styles.button,
+                props.valeur == 1111 ? {backgroundColor : "#00B4FB"} :
+                {backgroundColor :"#989C9E"}
+            ]}
+
         >
             <Text style={styles.text}>Vérifier le code</Text>
         </TouchableOpacity>
@@ -32,7 +42,6 @@ const styles = StyleSheet.create({
         width : 207,
         height: 52,
         borderRadius: 26,
-        backgroundColor :'#00B4FB',
         elevation:5,
     },
     

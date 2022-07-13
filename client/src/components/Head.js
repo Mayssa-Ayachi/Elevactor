@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Image,StyleSheet,Text} from 'react-native';
+import MusicIcon from './MusicIcon';
 import { 
     Tajawal_200ExtraLight,
     Tajawal_300Light,
@@ -30,6 +31,7 @@ export default function Head(){
     }
     return (
         <View>
+            <MusicIcon />
             <Image 
             style={styles.image}
             source={require('../../assets/logoText.png')} />
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         textAlign:'center',
-        marginTop:'30%',   
+        marginTop:'20%',   
         fontSize:25, 
         fontFamily:'Tajawal_700Bold'
     },

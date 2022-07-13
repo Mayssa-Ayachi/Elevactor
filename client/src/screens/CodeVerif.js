@@ -3,6 +3,8 @@ import { View , StyleSheet} from "react-native";
 import Head from "../components/Head";
 import Input from "../components/Input";
 export default function CodeVerif(){
+
+    
     return (
         <View style={styles.container}>
             <Head />
