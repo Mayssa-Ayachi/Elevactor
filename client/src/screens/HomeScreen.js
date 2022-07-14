@@ -40,7 +40,7 @@ const HomeScreen = (props) => {
       <Button
         title="Connecter"
         buttonStyle={{
-          borderRadius: "50%",
+          borderRadius: 40,
         }}
         containerStyle={{
           marginHorizontal: 50,
