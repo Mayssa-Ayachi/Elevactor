@@ -16,7 +16,7 @@ const HomeScreen = (props) => {
     <View>
       <Image style={styles.logo} source={require("../assets/loginLogo.png")} />
 
-      <Text h2 style={{ left: 20, marginBottom: 20 }}>
+      <Text h2 style={{ left: 20, marginTop: 20, marginBottom: 40 }}>
         Connexion
       </Text>
       <TextIconInput
