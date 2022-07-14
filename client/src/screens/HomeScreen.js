@@ -16,7 +16,7 @@ const HomeScreen = (props) => {
     <View>
       <Image style={styles.logo} source={require("../assets/loginLogo.png")} />
 
-      <Text h2 style={{ left: 20, marginTop: 20, marginBottom: 40 }}>
+      <Text h2 style={{ left: 110, marginTop: 20, marginBottom: 40 }}>
         Connexion
       </Text>
       <TextIconInput
@@ -70,8 +70,8 @@ const HomeScreen = (props) => {
 const styles = StyleSheet.create({
   logo: {
     resizeMode: "contain",
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     bottom: 10,
   },
   button: {

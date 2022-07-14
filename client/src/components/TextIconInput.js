@@ -7,9 +7,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { EvilIcons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 const TextIconInput = ({ label, icon, onChange, password }) => {
   const [show, setShow] = useState(false);
+  const passwordIcon = show ? "eye-slash" : "eye";
   return (
     <View>
       <View style={styles.iconTextContainer}>
@@ -24,13 +26,18 @@ const TextIconInput = ({ label, icon, onChange, password }) => {
           autoCapitalize="none"
           autoCorrect={false}
         />
+
         {password && (
           <TouchableOpacity
             onPress={() => {
               show ? setShow(false) : setShow(true);
             }}
           >
-            <EvilIcons name="eye" size={26} style={styles.showIcon} />
+            <FontAwesome
+              name={passwordIcon}
+              size={26}
+              style={styles.showIcon}
+            />
           </TouchableOpacity>
         )}
       </View>
