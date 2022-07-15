@@ -1,15 +1,17 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import HomeScreen from "./src/screens/HomeScreen";
 import { Provider as AuthProvider } from "./src/context/AuthenticationContext";
+import SignInScreen from "./src/screens/SignInScreen";
+import SignUpScreen from "./src/screens/SignUpScreen";
 const navigator = createStackNavigator(
   {
-    Home: HomeScreen,
+    SignIn: SignInScreen,
+    SignUp: SignUpScreen,
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "SignIn",
     defaultNavigationOptions: {
-      title: "Login",
+      title: "SignIn",
       headerShown: false,
     },
   }

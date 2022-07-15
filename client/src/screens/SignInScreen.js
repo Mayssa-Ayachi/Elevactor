@@ -9,14 +9,14 @@ import {
 import { Text, Button } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 import TextIconInput from "../components/TextIconInput";
-const HomeScreen = (props) => {
+const SignInScreen = ({ navigation }) => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   return (
     <View>
       <Image style={styles.logo} source={require("../assets/loginLogo.png")} />
 
-      <Text h2 style={{ left: 110, marginTop: 20, marginBottom: 40 }}>
+      <Text h2 style={{ alignSelf: "center", marginTop: 20, marginBottom: 20 }}>
         Connexion
       </Text>
       <TextIconInput
@@ -31,7 +31,7 @@ const HomeScreen = (props) => {
         password
       />
 
-      <TouchableOpacity style={styles.center}>
+      <TouchableOpacity>
         <Text style={{ alignSelf: "flex-end", margin: 7, fontSize: 15 }}>
           Mot de passe oublié ?
         </Text>
@@ -60,7 +60,7 @@ const HomeScreen = (props) => {
         }}
       />
 
-      <TouchableOpacity style={styles.center}>
+      <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
         <Text style={styles.underlinedText}>Créer un compte</Text>
       </TouchableOpacity>
     </View>
@@ -74,9 +74,6 @@ const styles = StyleSheet.create({
     height: 250,
     bottom: 10,
   },
-  button: {
-    color: "black",
-  },
   underlinedText: {
     alignSelf: "center",
     fontSize: 17,
@@ -85,4 +82,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default SignInScreen;

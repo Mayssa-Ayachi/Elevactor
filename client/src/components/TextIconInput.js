@@ -6,8 +6,8 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import { EvilIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 const TextIconInput = ({ label, icon, onChange, password }) => {
   const [show, setShow] = useState(false);
@@ -15,7 +15,12 @@ const TextIconInput = ({ label, icon, onChange, password }) => {
   return (
     <View>
       <View style={styles.iconTextContainer}>
-        <EvilIcons name={icon} size={30} color="black" />
+        <Feather
+          name={icon}
+          size={26}
+          color="black"
+          style={{ marginRight: 5 }}
+        />
         <Text style={styles.iconText}>{label}</Text>
       </View>
       <View style={styles.iconTextContainer}>
