@@ -10,6 +10,18 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  user: {
+    type: String,
+    required: true,
+  },
+  adress: {
+    type: String,
+    required: false,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
 });
 userSchema.pre("save", function (next) {
   const user = this;

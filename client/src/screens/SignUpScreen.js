@@ -12,7 +12,7 @@ import TextIconInput from "../components/TextIconInput";
 import { ScrollView } from "react-native-gesture-handler";
 import { Context as AuthContext } from "../context/AuthenticationContext";
 
-const SignUpScreen = (props) => {
+const SignUpScreen = ({ navigation }) => {
   const { state, signup } = useContext(AuthContext);
   const [user, setUser] = useState("");
   const [phone, setPhone] = useState("");
@@ -34,7 +34,11 @@ const SignUpScreen = (props) => {
       />
       <TextIconInput icon="phone" label=" Téléphone : " onChange={setPhone} />
       <TextIconInput icon="map-pin" label=" Adresse : " onChange={setAdress} />
-      <TextIconInput icon="mail" label=" Adresse email : " onChange={setMail} />
+      <TextIconInput
+        icon="mail"
+        label=" Adresse email : "
+        onChange={setEmail}
+      />
 
       <TextIconInput
         icon="lock"
@@ -42,6 +46,7 @@ const SignUpScreen = (props) => {
         onChange={setPassword}
         password
       />
+      {<Text style={styles.redText}>{state.errorMessage}</Text>}
 
       <Button
         title="Créer votre compte"
@@ -62,7 +67,10 @@ const SignUpScreen = (props) => {
         }
         iconPosition="right"
         onPress={() => {
-          signup({ user, password });
+          signup({ email, password, user, adress, phone }, () => {
+            navigation.navigate("SignIn");
+            console.log("done");
+          });
         }}
       />
     </ScrollView>
@@ -75,6 +83,10 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     bottom: 10,
+  },
+  redText: {
+    color: "red",
+    fontSize: 14,
   },
 });
 
