@@ -1,11 +1,13 @@
 import createDataContext from "./createDataContext";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import axiosAPI from "../api/axiosAPI";
 const authReducer = (state, actions) => {
   switch (actions.type) {
     case "add_error":
       return { ...state, errorMessage: actions.payload };
-    case "signup":
+    case "signin":
       return { errorMessage: "", token: actions.payload };
+
     default:
       return state;
   }
@@ -20,19 +22,32 @@ const signup = (dispatch) => {
         adress,
         phone,
       });
-      // await AsyncStorage.setItem("token", response.data.token);
-      dispatch({ type: "signup", payload: response.data.token });
+      await AsyncStorage.setItem("token", response.data.token);
+      dispatch({ type: "signin", payload: response.data.token });
       callback();
     } catch (err) {
       dispatch({
         type: "add_error",
-        payload: "Something went wrong with signup. Try again.",
+        payload: "Something went wrong with signup. ",
       });
     }
   };
 };
 const signin = (dispatch) => {
-  return ({ user, password }) => {};
+  return async ({ user, password }, callback) => {
+    try {
+      const response = await axiosAPI.post("/signin", { user, password });
+      console.log(response.data.token);
+      await AsyncStorage.setItem("token", response.data.token);
+      dispatch({ type: "sigin", payload: response.data.token });
+      callback();
+    } catch (err) {
+      dispatch({
+        type: "add_err",
+        payload: "Something went wrong with sign in",
+      });
+    }
+  };
 };
 const signout = (dispatch) => {
   return () => {};

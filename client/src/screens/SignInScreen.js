@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   StyleSheet,
   View,
@@ -6,12 +6,14 @@ import {
   Image,
   TextInput,
 } from "react-native";
+import { Context } from "../context/AuthenticationContext";
 import { Text, Button } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 import TextIconInput from "../components/TextIconInput";
 const SignInScreen = ({ navigation }) => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const { state, signin } = useContext(Context);
   return (
     <View>
       <Image style={styles.logo} source={require("../assets/loginLogo.png")} />
@@ -55,9 +57,9 @@ const SignInScreen = ({ navigation }) => {
           />
         }
         iconPosition="right"
-        onPress={() => {
-          console.log("the state is ", user);
-        }}
+        onPress={() =>
+          signin({ user, password }, () => navigation.navigate("Crossword"))
+        }
       />
 
       <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>

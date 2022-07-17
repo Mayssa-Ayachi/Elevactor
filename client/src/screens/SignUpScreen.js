@@ -87,6 +87,8 @@ const styles = StyleSheet.create({
   redText: {
     color: "red",
     fontSize: 14,
+    marginTop: 10,
+    marginLeft: 10,
   },
 });
 
