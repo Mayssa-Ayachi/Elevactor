@@ -23,8 +23,10 @@ const App = createAppContainer(navigator);
 
 export default () => {
   return (
+
     <AuthProvider>
       <App />
     </AuthProvider>
+
   );
 };
