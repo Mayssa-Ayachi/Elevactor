@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import { Provider as AuthProvider } from "./src/context/AuthenticationContext";
+import SignInScreen from "./src/screens/SignInScreen";
+import SignUpScreen from "./src/screens/SignUpScreen";
+import CrosswordScreen from "./src/screens/CrosswordScreen";
+const navigator = createStackNavigator(
+  {
+    SignIn: SignInScreen,
+    SignUp: SignUpScreen,
+    Crossword: CrosswordScreen,
   },
-});
+  {
+    initialRouteName: "SignIn",
+    defaultNavigationOptions: {
+      title: "SignIn",
+      headerShown: false,
+    },
+  }
+);
+
+const App = createAppContainer(navigator);
+
+export default () => {
+  return (
+
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+
+  );
+};
