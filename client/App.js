@@ -11,19 +11,21 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        
+      <Stack.Screen 
+          name ='SubTheme'
+          component={SubTheme}
+          options ={{
+            headerShown : false
+          }}
+        />
+
         <Stack.Screen 
           name= 'codeVerif'
           component={CodeVerif}
           options= {
             {headerShown:false}
           }
-        />
-        <Stack.Screen 
-          name ='SubTheme'
-          component={SubTheme}
-          options ={{
-            headerShown : false
-          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

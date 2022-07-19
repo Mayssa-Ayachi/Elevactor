@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react" ;
+import { View , Image ,Text , StyleSheet } from "react-native";
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import { Text , StyleSheet,Image} from 'react-native';
 import { 
     Montserrat_100Thin,
     Montserrat_100Thin_Italic,
@@ -22,11 +22,8 @@ import {
     Montserrat_900Black,
     Montserrat_900Black_Italic 
   } from '@expo-google-fonts/montserrat' ;
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
-
-export default function LangCard(props){
-
+export default function NavBar(){
     let [fontsLoaded,error] = useFonts({
         Montserrat_100Thin,
         Montserrat_100Thin_Italic,
@@ -49,42 +46,32 @@ export default function LangCard(props){
       })
       if (!fontsLoaded){
         return <AppLoading />
-    }   
-    return (
-        <TouchableOpacity style={[
-            styles.item , 
-            props.color,
-            props.border
-            ]}
-            onPress = {()=>{}}
-            >
-            <Image source={props.image}
-                    style = {styles.image}
-            />
-            <Text style ={styles.text}>{props.title}</Text>
-        </TouchableOpacity>
+    } 
+    return(
+        <View style={styles.container}>
+            <Image source={require('../../assets/languages.png')}  style={styles.image}/>
+            <Text style={styles.text}>Langues</Text>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
-    item : {
-        padding: '5%',
-        marginVertical: '4%',
-        marginHorizontal: '4%',
-        width : '90%' , 
-        height : 230 ,
-        borderRadius : 20,
-        alignItems:'center' ,
-        borderWidth : 5 ,
+    container : {
+        flexDirection:'row' , 
+        backgroundColor :'#FD5356',
+        marginTop : 35,
+        padding : 10 ,
+        borderBottomRightRadius : 20 ,
+        borderBottomLeftRadius : 20 ,
         
-    } ,
-    text : {
-        textAlign:'center',
-        fontFamily:'Montserrat_800ExtraBold',
-        fontSize:30,
+    },
+    image : {
+        height: 97 , 
+        width : 97 ,
     } , 
-    image :{
-        width : '65%' ,
-        height:'85%' , 
+    text :{
+        fontSize :40 , 
+        fontFamily:'Montserrat_700Bold' , 
+        padding : 20 ,
     }
 })

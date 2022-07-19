@@ -19,11 +19,17 @@ export default function CustomButton(props){
     if (!fontsLoaded){
         return <AppLoading />
     }
+    function verification(){
+        props.valeur == 1111 ?
+        Alert.alert('Login Successful','your code is correct')
+        :Alert.alert('Login Failed','your code is incorrect, try again !')
+        
+      }
     
     return(
         <View style={styles.buttonContainer}>
         <TouchableOpacity 
-            onPress={props.verif}
+            onPress={verification}
             style={[
                 styles.button,
                 props.valeur == 1111 ? {backgroundColor : "#00B4FB"} :
