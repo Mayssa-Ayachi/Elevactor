@@ -59,19 +59,20 @@ const styles = StyleSheet.create({
     container : {
         flexDirection:'row' , 
         backgroundColor :'#FD5356',
-        marginTop : 35,
-        padding : 10 ,
+        marginTop : '10%',
+        padding : '2%' ,
         borderBottomRightRadius : 20 ,
         borderBottomLeftRadius : 20 ,
         
     },
     image : {
-        height: 97 , 
-        width : 97 ,
+        height: '100%' , 
+        width : '25%' ,
+        padding : '10%'
     } , 
     text :{
         fontSize :40 , 
         fontFamily:'Montserrat_700Bold' , 
-        padding : 20 ,
+        padding : '5%' ,
     }
 })
