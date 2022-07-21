@@ -12,32 +12,35 @@ const StartScreen = ( { navigation } ) => {
       <View style={styles.all}>
         <View style={styles.contenue}>
             <TouchableOpacity
-              style={styles.touchable}
+              style={styles.toucheable}
               onPress={() => navigation.navigate("Enseignant")}>
-              <Text style={styles.item}>
                 <Image
                   style={styles.Image1}
                   source={require("../enseignant.jpg")}
                 />
+              <Text style={styles.item}>
+                
                 Je suis un enseignant
               </Text>
             </TouchableOpacity>
         </View>
         <View style={styles.contenue}>
-          <TouchableOpacity onPress={() => navigation.navigate("Parent")}>
-              <Text style={styles.item}>
+          <TouchableOpacity style={styles.toucheable}  onPress={() => navigation.navigate("Parent")}>
                 <Image
                   style={styles.Image1}
                   source={require("../parent.png")}
                 />
+              <Text style={styles.item}>
+                
                 Je suis un parent
               </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.contenue}>
-          <TouchableOpacity onPress={() => navigation.navigate("Eleve")}>
+          <TouchableOpacity style={styles.toucheable} onPress={() => navigation.navigate("Eleve")}>
+          <Image style={styles.Image1} source={require("../eleve.jpg")} />
             <Text style={styles.item}>
-              <Image style={styles.Image1} source={require("../eleve.jpg")} />
+              
               Je suis un élève
             </Text>
           </TouchableOpacity>
@@ -72,23 +75,28 @@ const styles = StyleSheet.create({
   Image1: {
     width: 80,
     height: 90,
+    marginHorizontal:10,
+    marginVertical:3
   },
-  item: {
-    paddingTop: 0,
-    paddingBottom: 15,
-    paddingRight: 30,
-    paddingLeft: 30,
+  toucheable:{
     borderColor: "#9b51b4",
     borderWidth: 3.5,
+    borderRadius: 20,
+    flexDirection:'row',
+    justifyContent:'center',
+    alignContent:'center',
+    textAlign:'center'
+  },
+  item: {
+    paddingVertical:30,
+    
+    paddingHorizontal:35,
+
     fontSize: 20,
     fontWeight: "bold",
-    //marginTop: 10,
-    borderRadius: 20,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
   },
   contenue: {
     marginTop: 12,
+    
   },
 });
