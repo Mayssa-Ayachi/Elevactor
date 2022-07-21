@@ -1,6 +1,6 @@
 import React from "react";
 import {NavigationContainer} from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import EleveScreen from "./assets/screens/Studentscreen";
 import EnseignantScreen from "./assets/screens/Enseignantscreen";
 import ParentScreen from "./assets/screens/Parentscreen";
@@ -9,6 +9,7 @@ import LoadingScreen from "./assets/screens/loadingscreen2";
 import NextScreen from "./assets/screens/nextscreen";
 
 const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -26,11 +27,14 @@ export default function App() {
         <Stack.Screen
           name="Loading"
           component={LoadingScreen}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
-        <Stack.Screen name="Next" component={NextScreen} options={{headerShown:false,} } />
+        <Stack.Screen
+          name="Next"
+          component={NextScreen}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-

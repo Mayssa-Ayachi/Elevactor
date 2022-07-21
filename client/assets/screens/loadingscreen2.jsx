@@ -1,8 +1,9 @@
-import React, {useRef, useEffect} from "react";
-import {View,StyleSheet,Dimensions,Animated,
-} from "react-native";
-import {useSafeAreaInsets} from "react-native-safe-area-context";
-const LoadingScreen = () => {
+import React, { useRef, useEffect,useState } from "react";
+import {View,StyleSheet,Dimensions,Animated,Text,FlatList,TouchableOpacity, Button,ScrollView} from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+const LoadingScreen = ( { navigation } ) => {
+  
   const edges = useSafeAreaInsets();
 
   // Animation Values....
@@ -35,11 +36,11 @@ const LoadingScreen = () => {
           toValue: 0.2,
           useNativeDriver: true,
         }),
-        Animated.timing(moveLogo, {
+       Animated.timing(moveLogo, {
           // animation li bch tatla3 fouk baad lsplash image
           toValue: {
             x: Dimensions.get("window").width / 2 - 200,
-            y: Dimensions.get("window").height / 2 - 5,
+            y: Dimensions.get("window").height / 2 - 250,
           },
           useNativeDriver: true,
         }),
@@ -48,10 +49,10 @@ const LoadingScreen = () => {
           useNativeDriver: true,
         }),
       ]).start();
-    }, 500);
+    navigation.replace("Next")}, 1500);
   }, []);
 
-  // bch tatla3 kima navbar
+  // bch tatla3 kima navbar*/
   return (
     <View
       style={{
@@ -88,7 +89,6 @@ const LoadingScreen = () => {
             }}></Animated.Image>
         </Animated.View>
       </Animated.View>
-
       <Animated.View
         style={{
           position: "absolute",
@@ -101,6 +101,7 @@ const LoadingScreen = () => {
           transform: [{translateY: contentTransition}],
         }}></Animated.View>
     </View>
+    
   );
 };
 export default LoadingScreen;
