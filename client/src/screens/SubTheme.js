@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList , View , Image } from "react-native-gesture-handler";
+import { FlatList , View , Image } from "react-native";
 import LangCard from "../components/LangCard";
 import NavBar from "../components/NavBar";
 import { StyleSheet } from "react-native";

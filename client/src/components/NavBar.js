@@ -22,7 +22,6 @@ import {
     Montserrat_900Black,
     Montserrat_900Black_Italic 
   } from '@expo-google-fonts/montserrat' ;
-
 export default function NavBar(){
     let [fontsLoaded,error] = useFonts({
         Montserrat_100Thin,

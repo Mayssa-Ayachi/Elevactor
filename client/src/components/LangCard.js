@@ -22,7 +22,7 @@ import {
     Montserrat_900Black,
     Montserrat_900Black_Italic 
   } from '@expo-google-fonts/montserrat' ;
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native';
 
 
 export default function LangCard(props){
