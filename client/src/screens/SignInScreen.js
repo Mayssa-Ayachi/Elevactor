@@ -7,7 +7,7 @@ import {
   TextInput,
 } from "react-native";
 import { Context } from "../context/AuthenticationContext";
-import { Text, Button } from "react-native";
+import { Text, Button } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 import TextIconInput from "../components/TextIconInput";
 const SignInScreen = ({ navigation }) => {

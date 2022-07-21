@@ -12,10 +12,10 @@ const navigator = createStackNavigator(
     SignUp: SignUpScreen,
     Crossword: CrosswordScreen,
     SubTheme: SubTheme,
-    Code:CodeVerif
+    Code: CodeVerif,
   },
   {
-    initialRouteName: "Code",
+    initialRouteName: "SignIn",
     defaultNavigationOptions: {
       title: "SignIn",
       headerShown: false,
@@ -27,10 +27,8 @@ const App = createAppContainer(navigator);
 
 export default () => {
   return (
-
     <AuthProvider>
       <App />
     </AuthProvider>
-
   );
 };

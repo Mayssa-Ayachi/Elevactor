@@ -6,7 +6,7 @@ import {
   Image,
   FlatList,
 } from "react-native";
-import { Text, Button } from "react-native";
+import { Text, Button } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 import TextIconInput from "../components/TextIconInput";
 import { ScrollView } from "react-native-gesture-handler";
