@@ -1,34 +1,32 @@
-import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import CodeVerif from './src/screens/CodeVerif';
-import SubTheme from './src/screens/SubTheme';
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import { Provider as AuthProvider } from "./src/context/AuthenticationContext";
+import SignInScreen from "./src/screens/SignInScreen";
+import SignUpScreen from "./src/screens/SignUpScreen";
+import CrosswordScreen from "./src/screens/CrosswordScreen";
+const navigator = createStackNavigator(
+  {
+    SignIn: SignInScreen,
+    SignUp: SignUpScreen,
+    Crossword: CrosswordScreen,
+  },
+  {
+    initialRouteName: "SignIn",
+    defaultNavigationOptions: {
+      title: "SignIn",
+      headerShown: false,
+    },
+  }
+);
 
-const Stack = createStackNavigator();
+const App = createAppContainer(navigator);
 
-
-export default function App() {
+export default () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        
-      <Stack.Screen 
-          name ='SubTheme'
-          component={SubTheme}
-          options ={{
-            headerShown : false
-          }}
-        />
 
-        <Stack.Screen 
-          name= 'codeVerif'
-          component={CodeVerif}
-          options= {
-            {headerShown:false}
-          }
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+
   );
-}
-
+};
