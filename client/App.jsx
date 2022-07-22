@@ -1,6 +1,11 @@
-import React from "react";
-import {NavigationContainer} from "@react-navigation/native";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import { Provider as AuthProvider } from "./src/context/AuthenticationContext";
+import SignInScreen from "./src/screens/SignInScreen";
+import SignUpScreen from "./src/screens/SignUpScreen";
+import CrosswordScreen from "./src/screens/CrosswordScreen";
+import SubTheme from "./src/screens/SubTheme";
+import CodeVerif from "./src/screens/CodeVerif";
 import EleveScreen from "./src/screens/Studentscreen";
 import EnseignantScreen from "./src/screens/Enseignantscreen";
 import ParentScreen from "./src/screens/Parentscreen";
@@ -17,44 +22,53 @@ import Level7Screen from "./src/screens/level7screen";
 import Level8Screen from "./src/screens/level8screen";
 import Level9Screen from "./src/screens/level9screen";
 import Level10Screen from "./src/screens/level10screen";
+const navigator = createStackNavigator(
+  {
+    SignIn: SignInScreen,
+    SignUp: SignUpScreen,
+    Crossword: CrosswordScreen,
+    SubTheme: SubTheme,
+    Code: CodeVerif,
+    StartScreen: StartScreen,
+    Enseignant: EnseignantScreen,
+    Parent: ParentScreen,
+    Eleve: EleveScreen,
+    Loading: LoadingScreen,
+    Next: NextScreen,
+    level1: Level1Screen,
+    level2: Level2Screen,
+    level3: Level3Screen,
+    level4: Level4Screen,
+    level5: Level5Screen,
+    level6: Level6Screen,
+    level7: Level7Screen,
+    level8: Level8Screen,
+    level9: Level9Screen,
+    level10: Level10Screen,
+  },
+  {
+    initialRouteName: "SignIn",
+    defaultNavigationOptions: {
+      title: "SignIn",
+      headerShown: false,
+    },
+    defaultNavigationOptions: {
+      title: "Next",
+      headerShown: false,
+    },
+    defaultNavigationOptions: {
+      title: "Loading",
+      headerShown: false,
+    },
+  }
+);
 
-const Stack = createNativeStackNavigator();
+const App = createAppContainer(navigator);
 
-export default function App() {
+export default () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Start">
-        <Stack.Screen
-          name="Start"
-          component={StartScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen name="Enseignant" component={EnseignantScreen} />
-        <Stack.Screen name="Parent" component={ParentScreen} />
-        <Stack.Screen name="Eleve" component={EleveScreen} />
-        <Stack.Screen
-          name="Loading"
-          component={LoadingScreen}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Next"
-          component={NextScreen}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen name="level1" component={Level1Screen} />
-        <Stack.Screen name="level2" component={Level2Screen} />
-        <Stack.Screen name="level3" component={Level3Screen} />
-        <Stack.Screen name="level4" component={Level4Screen} />
-        <Stack.Screen name="level5" component={Level5Screen} />
-        <Stack.Screen name="level6" component={Level6Screen} />
-        <Stack.Screen name="level7" component={Level7Screen} />
-        <Stack.Screen name="level8" component={Level8Screen} />
-        <Stack.Screen name="level9" component={Level9Screen} />
-        <Stack.Screen name="level10" component={Level10Screen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+    <AuthProvider >
+        <App />
+        </AuthProvider>
+    );
+};
