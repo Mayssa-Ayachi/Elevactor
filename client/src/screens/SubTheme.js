@@ -3,6 +3,7 @@ import { FlatList , View , Image } from "react-native";
 import LangCard from "../components/LangCard";
 import NavBar from "../components/NavBar";
 import { StyleSheet } from "react-native";
+import { useLinkProps } from "@react-navigation/native";
 
 const DATA = [
     {
@@ -24,9 +25,10 @@ const DATA = [
   ];
 
 
-export default function SubTheme(){
+export default function SubTheme(props){
     const renderItem = ({item}) => {
         return <LangCard 
+        navigation={props.navigation}
         title ={item.title}
         color ={{ backgroundColor: item.colorIn}}
         image = {item.image} 

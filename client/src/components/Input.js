@@ -13,7 +13,7 @@ import {
     Tajawal_900Black 
   } from '@expo-google-fonts/tajawal'
 
-export default function Input({navigation}){
+export default function Input(props){
     const [code , setCode] = React.useState(null);
     
     let [fontsLoaded,error] = useFonts({
@@ -28,12 +28,6 @@ export default function Input({navigation}){
         if (!fontsLoaded){
             return <AppLoading />
         } 
-        function verification(){
-            props.valeur == 1111 ?
-            Alert.alert('Login Successful','your code is correct')
-            :Alert.alert('Login Failed','your code is incorrect, try again !')
-            
-          }
     return (
         <View style={styles.container}>
         <Text style={styles.text}> Demandez le code à votre parent </Text>
@@ -48,7 +42,7 @@ export default function Input({navigation}){
         />
         <CustomButton 
             valeur = {code}
-            verif ={verification}
+            navigation={props.navigation}
         />
         </View>
     )

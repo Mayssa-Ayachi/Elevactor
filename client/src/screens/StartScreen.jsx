@@ -35,7 +35,7 @@ const StartScreen = ( { navigation } ) => {
         <View style={styles.contenue}>
           <TouchableOpacity
             style={styles.toucheable}
-            onPress={() => navigation.navigate("Eleve")}>
+            onPress={() => navigation.navigate("Code")}>
             <Image
               style={styles.Image1}
               source={require("../../assets/eleve.png")}

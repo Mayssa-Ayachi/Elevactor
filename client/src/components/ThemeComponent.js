@@ -2,11 +2,10 @@ import React from 'react';
 import {Text,TouchableOpacity,Image,View,StyleSheet} from 'react-native';
 
 function ThemeComponent(props)
-{
-  
+{console.log(props.fr)
     return (
         <View style={{...styles.top,backgroundColor: props.color, borderColor: props.borderColor }}>
-    <TouchableOpacity >
+    <TouchableOpacity onPress={()=>(props.fr===true) ?props.navigation.navigate("SubTheme"):console.log("failed")} >
             <View style={{alignItems:"center",resizeMode:"cover"}} >
         <Image source={props.source} style={styles.pic} />
         <Text style={styles.text}>{props.text}</Text>

@@ -21,7 +21,7 @@ export default function CustomButton(props){
     }
     function verification(){
         props.valeur == 1111 ?
-        Alert.alert('Login Successful','your code is correct')
+        props.navigation.navigate("Loading")
         :Alert.alert('Login Failed','your code is incorrect, try again !')
         
       }

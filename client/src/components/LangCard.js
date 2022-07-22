@@ -56,7 +56,7 @@ export default function LangCard(props){
             props.color,
             props.border
             ]}
-            onPress = {()=>{}}
+            onPress = {()=>{props.navigation.navigate("Game")}}
             >
             <Image source={props.image}
                     style = {styles.image}

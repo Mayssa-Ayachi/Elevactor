@@ -3,7 +3,6 @@ import { createStackNavigator } from "react-navigation-stack";
 import { Provider as AuthProvider } from "./src/context/AuthenticationContext";
 import SignInScreen from "./src/screens/SignInScreen";
 import SignUpScreen from "./src/screens/SignUpScreen";
-import CrosswordScreen from "./src/screens/CrosswordScreen";
 import SubTheme from "./src/screens/SubTheme";
 import CodeVerif from "./src/screens/CodeVerif";
 import EleveScreen from "./src/screens/Studentscreen";
@@ -22,11 +21,13 @@ import Level7Screen from "./src/screens/level7screen";
 import Level8Screen from "./src/screens/level8screen";
 import Level9Screen from "./src/screens/level9screen";
 import Level10Screen from "./src/screens/level10screen";
+import GameScreen from "./src/screens/GameScreen";
+import ThemeScreen from "./src/screens/ThemeScreen";
+import Language from "./src/screens/Language";
 const navigator = createStackNavigator(
   {
     SignIn: SignInScreen,
     SignUp: SignUpScreen,
-    Crossword: CrosswordScreen,
     SubTheme: SubTheme,
     Code: CodeVerif,
     StartScreen: StartScreen,
@@ -45,9 +46,12 @@ const navigator = createStackNavigator(
     level8: Level8Screen,
     level9: Level9Screen,
     level10: Level10Screen,
+    Game:GameScreen,
+    Language:Language,
+    Theme:ThemeScreen,
   },
   {
-    initialRouteName: "SignInScreen",
+    initialRouteName: "SignIn",
     defaultNavigationOptions: {
       title: "SignInScreen",
       headerShown: false,

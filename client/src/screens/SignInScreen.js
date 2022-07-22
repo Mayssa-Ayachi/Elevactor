@@ -58,7 +58,7 @@ const SignInScreen = ({ navigation }) => {
           />
         }
         iconPosition="right"
-        onPress={() =>
+        onPress={
           () => navigation.navigate("StartScreen")
 /*signin({ user, password }, () => navigation.navigate("StartScreen"))*/
         }
