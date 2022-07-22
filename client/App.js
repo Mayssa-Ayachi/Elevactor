@@ -47,9 +47,9 @@ const navigator = createStackNavigator(
     level10: Level10Screen,
   },
   {
-    initialRouteName: "StartScreen",
+    initialRouteName: "SignInScreen",
     defaultNavigationOptions: {
-      title: "StartScreen",
+      title: "SignInScreen",
       headerShown: false,
     },
     defaultNavigationOptions: {
