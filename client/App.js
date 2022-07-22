@@ -1,26 +1,22 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import HomeScreen from "./src/screens/HomeScreen";
-import { Provider as AuthProvider } from "./src/context/AuthenticationContext";
+import ThemeScreen from "./src/screens/ThemeScreen";
+import GameScreen from "./src/screens/GameScreen";
+
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
+    Theme:ThemeScreen,
+    Game:GameScreen
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Game",
     defaultNavigationOptions: {
-      title: "Login",
+      title: "App",
       headerShown: false,
     },
   }
 );
 
-const App = createAppContainer(navigator);
-
-export default () => {
-  return (
-    <AuthProvider>
-      <App />
-    </AuthProvider>
-  );
-};
+export default createAppContainer(navigator);
