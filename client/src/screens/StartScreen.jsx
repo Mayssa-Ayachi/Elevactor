@@ -6,43 +6,41 @@ const StartScreen = ( { navigation } ) => {
     <View style={styles.container}>
       <Image
         style={styles.Imageelevactor}
-        source={require("../elevactor10.png")}
+        source={require("../../assets/elevactor10.png")}
       />
       <Text style={styles.Joie}>Joie d'apprendre</Text>
       <View style={styles.all}>
         <View style={styles.contenue}>
-            <TouchableOpacity
-              style={styles.toucheable}
-              onPress={() => navigation.navigate("Enseignant")}>
-                <Image
-                  style={styles.Image1}
-                  source={require("../enseignant.jpg")}
-                />
-              <Text style={styles.item}>
-                
-                Je suis un enseignant
-              </Text>
-            </TouchableOpacity>
-        </View>
-        <View style={styles.contenue}>
-          <TouchableOpacity style={styles.toucheable}  onPress={() => navigation.navigate("Parent")}>
-                <Image
-                  style={styles.Image1}
-                  source={require("../parent.png")}
-                />
-              <Text style={styles.item}>
-                
-                Je suis un parent
-              </Text>
+          <TouchableOpacity
+            style={styles.toucheable}
+            onPress={() => navigation.navigate("Enseignant")}>
+            <Image
+              style={styles.Image1}
+              source={require("../../assets/enseignant.jpg")}
+            />
+            <Text style={styles.item}>Je suis un enseignant</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.contenue}>
-          <TouchableOpacity style={styles.toucheable} onPress={() => navigation.navigate("Eleve")}>
-          <Image style={styles.Image1} source={require("../eleve.jpg")} />
-            <Text style={styles.item}>
-              
-              Je suis un élève
-            </Text>
+          <TouchableOpacity
+            style={styles.toucheable}
+            onPress={() => navigation.navigate("Parent")}>
+            <Image
+              style={styles.Image1}
+              source={require("../../assets/parent.png")}
+            />
+            <Text style={styles.item}>Je suis un parent</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.contenue}>
+          <TouchableOpacity
+            style={styles.toucheable}
+            onPress={() => navigation.navigate("Eleve")}>
+            <Image
+              style={styles.Image1}
+              source={require("../../assets/eleve.png")}
+            />
+            <Text style={styles.item}>Je suis un élève</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -70,7 +68,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 18,
     letterSpacing: 2,
-    fontFamily: "",
   },
   Image1: {
     width: 80,

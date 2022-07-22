@@ -1,12 +1,12 @@
 import React from "react";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import EleveScreen from "./assets/screens/Studentscreen";
-import EnseignantScreen from "./assets/screens/Enseignantscreen";
-import ParentScreen from "./assets/screens/Parentscreen";
-import StartScreen from "./assets/screens/StartScreen";
-import LoadingScreen from "./assets/screens/loadingscreen2";
-import NextScreen from "./assets/screens/nextscreen";
+import EleveScreen from "./src/screens/Studentscreen";
+import EnseignantScreen from "./src/screens/Enseignantscreen";
+import ParentScreen from "./src/screens/Parentscreen";
+import StartScreen from "./src/screens/StartScreen";
+import LoadingScreen from "./src/screens/loadingscreen2";
+import NextScreen from "./src/screens/nextscreen"
 
 const Stack = createNativeStackNavigator();
 

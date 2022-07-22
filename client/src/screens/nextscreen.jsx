@@ -21,7 +21,7 @@ const NextScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image style={styles.img} source={require("../france.png")} />
+        <Image style={styles.img} source={require("../../assets/france.png")} />
       </View>
       <View style={styles.list}>
         <FlatList
@@ -31,11 +31,9 @@ const NextScreen = ({navigation}) => {
           data={level}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity onPress={() => navigating( item.id )}>
-                
-                  <Text style={styles.items}>{item.name}</Text>
-                  
-                </TouchableOpacity>
+              <TouchableOpacity onPress={() => navigating(item.id)}>
+                <Text style={styles.items}>{item.name}</Text>
+              </TouchableOpacity>
             );
           }}
         />

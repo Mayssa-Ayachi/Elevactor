@@ -1,5 +1,5 @@
-import React, { useRef, useEffect,useState } from "react";
-import {View,StyleSheet,Dimensions,Animated,Text,FlatList,TouchableOpacity, Button,ScrollView} from "react-native";
+import React, { useRef, useEffect} from "react";
+import {View,StyleSheet,Dimensions,Animated} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const LoadingScreen = ( { navigation } ) => {
@@ -76,7 +76,7 @@ const LoadingScreen = ( { navigation } ) => {
             justifyContent: "center",
           }}>
           <Animated.Image
-            source={require("../backgroundcolor.png")}
+            source={require("../../assets/backgroundcolor.png")}
             style={{
               width: "100%",
               height: "100%",
@@ -101,7 +101,6 @@ const LoadingScreen = ( { navigation } ) => {
           transform: [{translateY: contentTransition}],
         }}></Animated.View>
     </View>
-    
   );
 };
 export default LoadingScreen;
