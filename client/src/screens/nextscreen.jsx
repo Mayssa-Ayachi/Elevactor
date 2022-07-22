@@ -16,7 +16,39 @@ const NextScreen = ({navigation}) => {
         {name: "10", id: "j",},
 
       ]);
-  const navigating = (id) => {
+  const navigating = ( id ) => {
+    switch (id) {
+      case "a":
+        navigation.navigate("level1");
+        break;
+      case "b":
+        navigation.navigate("level2");
+        break;
+      case "c":
+        navigation.navigate("level3");
+        break;
+      case "d":
+        navigation.navigate("level4");
+        break;
+      case "e":
+        navigation.navigate("level5");
+        break;
+      case "f":
+        navigation.navigate("level6");
+        break;
+      case "g":
+        navigation.navigate("level7");
+        break;
+      case "h":
+        navigation.navigate("level8");
+        break;
+      case "i":
+        navigation.navigate("level9");
+        break;
+      case "j":
+        navigation.navigate("level10");
+        break;
+    }
   };
   return (
     <View style={styles.container}>
@@ -46,6 +78,13 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "20%",
   },
+  container: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10,
+    marginBottom: 40,
+  },
   img: {
     width: "100%",
     height: "100%",
@@ -59,7 +98,7 @@ const styles = StyleSheet.create({
     /* display: "flex",
     flexDirection: "column",*/
     justifyContent: "space-between",
-    marginTop: "7%",
+    marginTop: "5%",
     alignItems: "center",
   },
 
