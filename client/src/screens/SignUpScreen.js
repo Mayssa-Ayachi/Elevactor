@@ -67,10 +67,14 @@ const SignUpScreen = ({ navigation }) => {
         }
         iconPosition="right"
         onPress={() => {
-          signup({ email, password, user, adress, phone }, () => {
+          () => {
             navigation.navigate("SignIn");
             console.log("done");
-          });
+          }
+          /*signup({ email, password, user, adress, phone }, () => {
+            navigation.navigate("SignIn");
+            console.log("done");*/
+          
         }}
       />
     </ScrollView>
