@@ -8,7 +8,7 @@ const {width, height} = Dimensions.get('screen');
 function WinComponent()
 {
     console.log(`${width}/${height}`)
-    return (
+    return (    
             <View style={styles.view}>
         <Image source={require("../assets/water.png")} />
         <Text style={styles.text}>Bravo mon Héro</Text>

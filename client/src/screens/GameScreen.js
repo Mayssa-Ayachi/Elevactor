@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { View, FlatList, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import ButtonComponent from "../components/ButtonComponent";
 import WinComponent from "../components/WinComponent";
-import { Dimensions } from 'react-native';
-const {width, height} = Dimensions.get('screen');
 
 function GameScreen() {
+    useEffect(()=>{styles.button={...styles.button,backgroundColor:'#EAEAFF'}})
     const phrase="l’eau de la planet est de plus en plus rare";
     const [tab1, setTab1] = useState(["de plus en plus rare", "est", "l’eau de la planet"]);
     const [tab2, setTab2] = useState([]);
     const [verif, setVerif] = useState(false);
     const [win, setWin] = useState(false);
+    const [showComponent,setShowComponent]=useState(false);
     return (
         <View style={styles.all} >
             <View style={styles.container1}>
@@ -46,15 +46,16 @@ function GameScreen() {
                 {(tab1.length===0)&&(!verif) ? verification(tab2,phrase,setVerif,setWin) : null}
             </View>
         </View>
-        {(win) ?         <View style={{backgroundColor:'black',position:"absolute",width:width,height:height,opacity:0.8}} />: null}
-        {(win) ? gagner(styles): null}
+        {(win) ? gagner(setShowComponent) : null }  
+        {(showComponent) ?<WinComponent />: null}
+
         </View>
     )
 }
-function gagner(styles)
+
+function gagner(setShowComponent)
 {
-    return (
-        <WinComponent />)
+    setTimeout(() => { setShowComponent(true)}, 2000);
 }
  function verification(tab2,phrase,setVerif,setWin)
  {
