@@ -51,7 +51,7 @@ const navigator = createStackNavigator(
     Theme:ThemeScreen,
   },
   {
-    initialRouteName: "SubTheme",
+    initialRouteName: "SignIn",
     defaultNavigationOptions: {
       title: "SignInScreen",
       headerShown: false,
