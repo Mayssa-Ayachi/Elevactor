@@ -8,7 +8,7 @@ const {width, height} = Dimensions.get('screen');
 function WinComponent()
 {
     console.log(`${width}/${height}`)
-    return (
+    return (    
             <View style={styles.view}>
         <Image source={require("../assets/water.png")} />
         <Text style={styles.text}>Bravo mon Héro</Text>
@@ -29,7 +29,7 @@ const styles=StyleSheet.create({
         backgroundColor:'white',
         flex:0.5,
         top:height/4,
-        width:height/2,
+        width:width*3/4,
         height:height/2,
         position:'absolute',
         alignSelf:"center",
