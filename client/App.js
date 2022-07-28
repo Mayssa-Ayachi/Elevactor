@@ -46,14 +46,14 @@ const navigator = createStackNavigator(
     level8: Level8Screen,
     level9: Level9Screen,
     level10: Level10Screen,
-    Game:GameScreen,
-    Language:Language,
-    Theme:ThemeScreen,
+    Game: GameScreen,
+    Language: Language,
+    Theme: ThemeScreen,
   },
   {
-    initialRouteName: "SignIn",
+    initialRouteName: "StartScreen",
     defaultNavigationOptions: {
-      title: "SignInScreen",
+      title: "StartScreen",
       headerShown: false,
     },
     defaultNavigationOptions: {
@@ -71,8 +71,8 @@ const App = createAppContainer(navigator);
 
 export default () => {
   return (
-    <AuthProvider >
-        <App />
-        </AuthProvider>
-    );
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  );
 };
