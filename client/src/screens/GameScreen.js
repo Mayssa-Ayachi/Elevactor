@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import { View, FlatList, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import ButtonComponent from "../components/ButtonComponent";
 import WinComponent from "../components/WinComponent";
+/* Game1 */
 
 function GameScreen() {
     useEffect(()=>{styles.button={...styles.button,backgroundColor:'#EAEAFF'}})
