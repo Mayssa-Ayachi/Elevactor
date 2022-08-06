@@ -25,7 +25,7 @@ const NextScreen = ({navigation}) => {
         navigation.navigate("level2");
         break;
       case "c":
-        navigation.navigate("level3");
+        navigation.navigate("thirdgame");
         break;
       case "d":
         navigation.navigate("level4");
