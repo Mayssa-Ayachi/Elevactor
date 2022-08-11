@@ -25,8 +25,15 @@ import GameScreen from "./src/screens/GameScreen";
 import ThemeScreen from "./src/screens/ThemeScreen";
 import Language from "./src/screens/Language";
 import Thirdgame from "./src/screens/Thirdgame";
+import CheckGame2 from "./src/screens/checkgame2";
+import CheckGame3 from "./src/screens/checkgame3";
+import CheckGame4 from "./src/screens/checkgame4";
+import CheckGame5 from "./src/screens/checkgame5";
+import CheckGame6 from "./src/screens/checkgame6";
+import CheckGame7 from "./src/screens/checkgame7";
 
-const navigator = createStackNavigator({
+const navigator = createStackNavigator(
+  {
     SignIn: SignInScreen,
     SignUp: SignUpScreen,
     SubTheme: SubTheme,
@@ -51,30 +58,36 @@ const navigator = createStackNavigator({
     Language: Language,
     Theme: ThemeScreen,
     Thirdgame: Thirdgame,
-}, {
-    initialRouteName: "Thirdgame",
+    CheckGame2: CheckGame2,
+    CheckGame3: CheckGame3,
+    CheckGame4: CheckGame4,
+    CheckGame5: CheckGame5,
+    CheckGame6: CheckGame6,
+    CheckGame7: CheckGame7,
+  },
+  {
+    initialRouteName: "CheckGame3",
     defaultNavigationOptions: {
-        title: "StartScreen",
-        headerShown: false,
+      title: "StartScreen",
+      headerShown: false,
     },
     defaultNavigationOptions: {
-        title: "Next",
-        headerShown: false,
+      title: "Next",
+      headerShown: false,
     },
     defaultNavigationOptions: {
-        title: "Loading",
-        headerShown: false,
+      title: "Loading",
+      headerShown: false,
     },
-});
+  }
+);
 
 const App = createAppContainer(navigator);
 
 export default () => {
-    return ( <
-        AuthProvider >
-        <
-        App / >
-        <
-        /AuthProvider>
+    return ( 
+    <AuthProvider >
+<App/>
+        </AuthProvider>
     );
 };
