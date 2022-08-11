@@ -49,7 +49,7 @@ const LoadingScreen = ( { navigation } ) => {
           useNativeDriver: true,
         }),
       ]).start();
-    navigation.replace("Next")}, 1500);
+    navigation.replace("Language")}, 1500);
   }, []);
 
   // bch tatla3 kima navbar*/

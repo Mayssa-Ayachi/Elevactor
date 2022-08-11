@@ -9,7 +9,7 @@ const EleveScreen = ({navigation}) => {
       <Button
         title="Continue"
         onPress={() => {
-          navigation.navigate("Loading");
+          navigation.navigate("Code");
         }}
       />
     </View>

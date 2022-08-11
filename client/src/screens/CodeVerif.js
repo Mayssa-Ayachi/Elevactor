@@ -2,13 +2,13 @@ import React from "react";
 import { View , StyleSheet} from "react-native";
 import Head from "../components/Head";
 import Input from "../components/Input";
-export default function CodeVerif(){
+export default function CodeVerif(props){
 
     
     return (
         <View style={styles.container}>
             <Head />
-            <Input />
+            <Input navigation={props.navigation} />
         </View>
     )
 }

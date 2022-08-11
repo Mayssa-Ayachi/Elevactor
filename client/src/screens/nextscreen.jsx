@@ -19,13 +19,13 @@ const NextScreen = ({navigation}) => {
   const navigating = ( id ) => {
     switch (id) {
       case "a":
-        navigation.navigate("level1");
+        navigation.navigate("Game");
         break;
       case "b":
         navigation.navigate("level2");
         break;
       case "c":
-        navigation.navigate("level3");
+        navigation.navigate("thirdgame");
         break;
       case "d":
         navigation.navigate("level4");

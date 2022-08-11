@@ -10,6 +10,7 @@ import { Context } from "../context/AuthenticationContext";
 import { Text, Button } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 import TextIconInput from "../components/TextIconInput";
+
 const SignInScreen = ({ navigation }) => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
@@ -57,8 +58,9 @@ const SignInScreen = ({ navigation }) => {
           />
         }
         iconPosition="right"
-        onPress={() =>
-          signin({ user, password }, () => navigation.navigate("Crossword"))
+        onPress={
+          () => navigation.navigate("Loading")
+          /*signin({ user, password }, () => navigation.navigate("StartScreen"))*/
         }
       />
 
