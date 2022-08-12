@@ -1,10 +1,35 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useRef  } from "react";
 import {Text,Image,View,StyleSheet,TouchableOpacity} from "react-native";
 
 const Thirdgamecontent = () => {
+
+    const [score,setscore]=useState("5");
+
+    const watermelon=require('../assets/watemelon.png');
+    const mother=require('../assets/mother.png');
+    const father=require('../assets/father.png');
+    const castle=require('../assets/castle.png');
+
+    const wrongwatermelon=require('../assets/wrongwatermelon.png');
+    const wrongmother=require('../assets/wrongmother.png');
+    const wrongcastle=require('../assets/wrongcastle.png');
+
+    const rightfather=require('../assets/rightfather.png');
+
+    const [imagewatermelon, setImagewatermelon] = useState(watermelon);
+    const [imagemother, setImagemother] = useState(mother);
+    const [imagefather, setImagefather] = useState(father);
+    const [imagecastle, setImagecastle] = useState(castle);
+
+    const press=()=>{
+        setImagewatermelon(wrongwatermelon);
+        setImagemother(wrongmother);
+        setImagefather(rightfather);
+        setImagecastle(wrongcastle);
+    }
     return(
-        <View>
-            
+         <View>
+ 
                 <View style={styles.header}>
                         <View>
                             <Image source={require('../assets/progresbar1.png')} />          
@@ -12,7 +37,7 @@ const Thirdgamecontent = () => {
                     
                         <View style={styles.life}>
                             <Image source={require('../assets/love-02.png')} />
-                            <Text style={{color:"#FF5E43",fontWeight:"bold",fontSize:27}}>5</Text>
+                            <Text style={{color:"#FF5E43",fontWeight:"bold",fontSize:27}}>{score}</Text>
                         </View>
                 </View>    
 
@@ -25,19 +50,19 @@ const Thirdgamecontent = () => {
                 
                 <View style={styles.allchoices}>
                     <View style={styles.choices} >
-                        <TouchableOpacity style={styles.choice}>
-                            <Image source={require('../assets/watemelon.png')} />
+                        <TouchableOpacity onPress={()=>{press();setscore("4")}} style={styles.choice}>
+                            <Image source={imagewatermelon} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.choice}>
-                            <Image source={require('../assets/mother.png')} />
+                        <TouchableOpacity onPress={()=>{press();setscore("4")}} style={styles.choice}>
+                            <Image source={imagemother} />
                         </TouchableOpacity>
                     </View>
                     <View style={styles.choices} >
-                        <TouchableOpacity style={styles.choice}>
-                            <Image source={require('../assets/father.png')} />
+                        <TouchableOpacity onPress={press} style={styles.choice}>
+                            <Image source={imagefather} />
                         </TouchableOpacity>   
-                        <TouchableOpacity style={styles.choice}>
-                            <Image source={require('../assets/castle.png')} />
+                        <TouchableOpacity onPress={()=>{press();setscore("4")}} style={styles.choice}>
+                            <Image source={imagecastle} />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -83,8 +108,10 @@ const styles = StyleSheet.create({
     },
     lampe:{
         marginLeft:"auto",
-        marginRight:"auto",
-        
+        marginRight:"auto",  
+    },
+    new:{
+        margin:"50%"
     }
    
 });
