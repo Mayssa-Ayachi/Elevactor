@@ -1,10 +1,22 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useRef  } from "react";
 import {Text,Image,View,StyleSheet,TouchableOpacity} from "react-native";
 
-const Thirdgamecontent = () => {
+const Thirdgamecontent = (props) => {
+
+  
+    const press=()=>{
+        props.setscore("4");
+        props.setImagewatermelon(props.wrongwatermelon);
+        props.setImagemother(props.wrongmother);
+        props.setImagefather(props.rightfather);
+        props.setImagecastle(props.wrongcastle);
+        setTimeout(()=>{ 
+        props.setNext(props.next)},2000)
+    }
+
     return(
-        <View>
-            
+         <View>
+ 
                 <View style={styles.header}>
                         <View>
                             <Image source={require('../assets/progresbar1.png')} />          
@@ -12,32 +24,32 @@ const Thirdgamecontent = () => {
                     
                         <View style={styles.life}>
                             <Image source={require('../assets/love-02.png')} />
-                            <Text style={{color:"#FF5E43",fontWeight:"bold",fontSize:27}}>5</Text>
+                            <Text style={{color:"#FF5E43",fontWeight:"bold",fontSize:27}}>{props.score}</Text>
                         </View>
                 </View>    
 
                 <View style={styles.rectangle} >
                     <Image source={require('../assets/bleurectangle.png')} />
                     <View style={styles.theme}>
-                        <Text style={{fontWeight:"bold",fontSize:23,color:"white"}}>Ç'est qui l'homme ?</Text> 
+                        <Text style={{fontWeight:"bold",fontSize:23,color:"white"}}>{props.title}</Text> 
                     </View>         
                 </View>
                 
                 <View style={styles.allchoices}>
                     <View style={styles.choices} >
-                        <TouchableOpacity style={styles.choice}>
-                            <Image source={require('../assets/watemelon.png')} />
+                        <TouchableOpacity onPress={()=>{press()}} style={styles.choice}>
+                            <Image source={props.imagewatermelon} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.choice}>
-                            <Image source={require('../assets/mother.png')} />
+                        <TouchableOpacity onPress={()=>{press()}} style={styles.choice}>
+                            <Image source={props.imagemother} />
                         </TouchableOpacity>
                     </View>
                     <View style={styles.choices} >
-                        <TouchableOpacity style={styles.choice}>
-                            <Image source={require('../assets/father.png')} />
+                        <TouchableOpacity onPress={press} style={styles.choice}>
+                            <Image source={props.imagefather} />
                         </TouchableOpacity>   
-                        <TouchableOpacity style={styles.choice}>
-                            <Image source={require('../assets/castle.png')} />
+                        <TouchableOpacity onPress={()=>{press()}} style={styles.choice}>
+                            <Image source={props.imagecastle} />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -83,8 +95,10 @@ const styles = StyleSheet.create({
     },
     lampe:{
         marginLeft:"auto",
-        marginRight:"auto",
-        
+        marginRight:"auto",  
+    },
+    new:{
+        margin:"50%"
     }
    
 });
