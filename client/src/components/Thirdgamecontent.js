@@ -2,36 +2,36 @@ import React, { useState,useEffect, useRef  } from "react";
 import {Text,Image,View,StyleSheet,TouchableOpacity} from "react-native";
 
 const Thirdgamecontent = (props) => {
-    const [ref1,setref1]=useState("1");
-    const [ref2,setref2]=useState("2");
-    const [ref3,setref3]=useState("3");
-    const [ref4,setref4]=useState("4");
+     
 
- 
-    const renderImage = () => {
-        const Images = [
-          { image: props.Imagewatermelon,ref:"1" },
-          { image:  props.Imagemother,ref:"2" },
-          { image: props.Imagefather,ref:"3" },
-          { image: props.Imagecastle,ref:"4" },
-        ];
-        const randomImageIndex = Math.floor(Math.random() * Math.floor(4));
-        return Images[randomImageIndex].image;
-    };    
-  
+    const [images,setimages]=useState(()=>{return([{im:props.image1,id:1,imc:props.trueim1},{im:props.image2,id:2,imc:props.wrongim2},
+        {im:props.image3,id:3,imc:props.wrongim3},{im:props.image4,id:4,imc:props.wrongim4}].sort(()=> Math.random() - 0.5))});
+
+    {console.log(images)}
+    const [img0,setimg0]=useState(images[0].im);
+    const [imgc0,setimgc0]=useState(images[0].imc);
+
+    const [img1,setimg1]=useState(images[1].im);
+    const [imgc1,setimgc1]=useState(images[1].imc);
+
+    const [img2,setimg2]=useState(images[2].im);
+    const [imgc2,setimgc2]=useState(images[2].imc);
+
+    const [img3,setimg3]=useState(images[3].im);
+    const [imgc3,setimgc3]=useState(images[3].imc);
+
     const press=(ref)=>{
- 
-         if (ref!=props.id){
-            props.setscore(props.score-1);
-            console.log(props.score);
-        }
 
-        props.setImagewatermelon(props.wrongwatermelon);
-        props.setImagemother(props.wrongmother);
-        props.setImagefather(props.rightfather);
-        props.setImagecastle(props.wrongcastle);
+        setimg0(imgc0);
+        setimg1(imgc1);
+        setimg2(imgc2);
+        setimg3(imgc3);
+ 
+        console.log("waaaaaaaaaaaaaa");
+
         setTimeout(()=>props.setNext(props.next),2000)
-    }
+
+     }
 
  
     return(
@@ -57,19 +57,19 @@ const Thirdgamecontent = (props) => {
                 
                 <View style={styles.allchoices}>
                     <View style={styles.choices} >
-                        <TouchableOpacity  onPress={()=>press(ref1)} style={styles.choice}>
-                            <Image source={props.imagewatermelon} />
+                        <TouchableOpacity  onPress={()=>press(images[0].id)} style={styles.choice}>
+                            <Image  source={img0} />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={()=>press(ref2)} style={styles.choice}>
-                            <Image source={props.imagemother} />
+                        <TouchableOpacity onPress={()=>press(images[1].id)} style={styles.choice}>
+                            <Image source={img1} />
                         </TouchableOpacity>
                     </View>
                     <View style={styles.choices} >
-                        <TouchableOpacity onPress={()=>press(ref3)}  style={styles.choice}>
-                            <Image source={props.imagefather} />
+                        <TouchableOpacity onPress={()=>press(images[2].id)}  style={styles.choice}>
+                            <Image  source={img2} />
                         </TouchableOpacity>   
-                        <TouchableOpacity onPress={()=>press(ref4)}  style={styles.choice}>
-                            <Image source={props.imagecastle} />
+                        <TouchableOpacity onPress={()=>press(images[3].id)}  style={styles.choice}>
+                            <Image  source={img3} />
                         </TouchableOpacity>
                     </View>
                 </View>
