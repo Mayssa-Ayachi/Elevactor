@@ -34,7 +34,6 @@ const Thirdgamecontent = (props) => {
             props.setscore(props.score-1);
             console.log(props.score);}
             props.setNext(props.next)},2000)
-
      }
 
  
