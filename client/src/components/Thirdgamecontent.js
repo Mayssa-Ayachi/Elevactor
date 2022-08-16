@@ -21,6 +21,7 @@ const Thirdgamecontent = (props) => {
     const [imgc3,setimgc3]=useState(images[3].imc);
 
     const press=(ref)=>{
+       
 
         setimg0(imgc0);
         setimg1(imgc1);
@@ -29,7 +30,10 @@ const Thirdgamecontent = (props) => {
  
         console.log("waaaaaaaaaaaaaa");
 
-        setTimeout(()=>props.setNext(props.next),2000)
+        setTimeout(()=>{ if (ref!=props.id){
+            props.setscore(props.score-1);
+            console.log(props.score);}
+            props.setNext(props.next)},2000)
 
      }
 
