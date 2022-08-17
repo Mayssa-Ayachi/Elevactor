@@ -4,8 +4,13 @@ import {Text,Image,View,StyleSheet,TouchableOpacity} from "react-native";
 const Thirdgamecontent = (props) => {
      
 
-    const [images,setimages]=useState(()=>{return([{im:props.image1,id:1,imc:props.trueim1},{im:props.image2,id:2,imc:props.wrongim2},
-        {im:props.image3,id:3,imc:props.wrongim3},{im:props.image4,id:4,imc:props.wrongim4}].sort(()=> Math.random() - 0.5))});
+    const [images,setimages]=useState(()=>{return [
+      {im: props.image1, id: 1, imc: props.trueim1},
+      {im: props.image2, id: 2, imc: props.wrongim2},
+      {im: props.image3, id: 3, imc: props.wrongim3},
+      {im: props.image4, id: 4, imc: props.wrongim4},
+      {im: props.image5, id: 5, imc: props.wrongim5},
+    ].sort(() => Math.random() - 0.5);});
 
     {console.log(images)}
     const [img0,setimg0]=useState(images[0].im);
@@ -18,7 +23,9 @@ const Thirdgamecontent = (props) => {
     const [imgc2,setimgc2]=useState(images[2].imc);
 
     const [img3,setimg3]=useState(images[3].im);
-    const [imgc3,setimgc3]=useState(images[3].imc);
+    const [imgc3, setimgc3] = useState( images[3].imc );
+    const [img4, setimg4] = useState( images[4].im );
+    const [imgc4, setimgc4] = useState(images[4].imc);
 
     const press=(ref)=>{
        
@@ -35,7 +42,19 @@ const Thirdgamecontent = (props) => {
             console.log(props.score);}
             props.setNext(props.next)},2000)
      }
-
+const pressHandler = (ref) => {
+  setimg0(imgc0);
+  setimg1(imgc1);
+  setimg2(imgc2);
+    setimg3( imgc3 );
+    setimg4( imgc4 );
+  setTimeout(() => {
+    if (ref == 5) {
+      console.log(props.score);
+    }
+    props.setNext(props.next);
+  }, 2000);
+};
  
     return(
          <View>
@@ -75,12 +94,17 @@ const Thirdgamecontent = (props) => {
                         <TouchableOpacity onPress={()=>press(images[3].id)}  style={styles.choice}>
                             <Image  source={img3} />
                         </TouchableOpacity>
-                    </View>
+                </View>
+                <View>
+                    <TouchableOpacity onPress={()=>pressHandler(images[4].id)}>
+                            <Image source={img4}/>
+                    </TouchableOpacity>
+                </View>
                 </View>
  
-                <View style={styles.lampe}>
+            {/*<View style={styles.lampe}>
                     <Image source={require('../assets/lampenonalumée.png')} />               
-                </View>
+    </View>*/}
 
              
           </View>        
@@ -129,7 +153,8 @@ const styles = StyleSheet.create({
     },
     lampe:{
         marginLeft:"auto",
-        marginRight:"auto",  
+        marginRight: "auto",  
+    
     },
     new:{
         margin:"50%"

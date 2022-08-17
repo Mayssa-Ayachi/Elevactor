@@ -57,7 +57,10 @@ const Thirdgame = () => {
     const [imagewrongfille, setwrongfille] = useState(require('../assets/wrongfille.png'));
     
     const [imagefamily, setImagefamily] = useState(require('../assets/family.png'));
-    const [imagewrongfamily, setwrongfamily] = useState(require('../assets/wrongfam.png'));
+    const [imagewrongfamily, setwrongfamily] = useState( require( '../assets/wrongfam.png' ) );
+    
+    const [imagelampe, setImagelampe] = useState( require( '../assets/lampenonalumée.png' ) )
+    const [imagelampeall,setImagelampeall]=useState(require('../assets/lampeallume.png'))
 
     const [levels,setlevels]=useState(()=>{return([
         {theme:homme,im1:imagefather,im2:imagemother,im3:imagewatermelon,im4:imagecastle,trueim1:imagerightfather,wrongimg2:imagewrongmother,wrongim3:imagewrongwatermelon,wrongim4:imagewrongcastle},
