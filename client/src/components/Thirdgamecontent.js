@@ -1,6 +1,6 @@
 import React, { useState,useEffect, useRef  } from "react";
 import {Text,Image,View,StyleSheet,TouchableOpacity} from "react-native";
-
+ 
 const Thirdgamecontent = (props) => {
      
 
@@ -81,6 +81,8 @@ const Thirdgamecontent = (props) => {
                 <View style={styles.lampe}>
                     <Image source={require('../assets/lampenonalumée.png')} />               
                 </View>
+
+             
           </View>        
     );
 };
@@ -88,7 +90,7 @@ const Thirdgamecontent = (props) => {
 const styles = StyleSheet.create({
     header:{
         flexDirection:"row",
-        justifyContent:"center",
+        justifyContent:"space-around",
         alignItems:"center",
         marginTop:"10%"
     },
@@ -103,7 +105,6 @@ const styles = StyleSheet.create({
         position:"relative", 
         flexDirection:"row",
         alignItems:"center",
-        right:"0vh",
     },
     rectangle:{
         marginTop:"6%",
@@ -132,6 +133,11 @@ const styles = StyleSheet.create({
     },
     new:{
         margin:"50%"
+    },
+    bravo:{
+        position:"absolute",  
+        top:"auto",
+        right:"auto",
     }
    
 });
