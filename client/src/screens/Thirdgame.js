@@ -5,7 +5,8 @@ import Thirdgamecontent from "../components/Thirdgamecontent";
 const Thirdgame = () => {
 
     const [next, setNext] = useState("homme");
-    const [score,setscore]=useState("5");
+
+    const [score,setscore]=useState(5);
 
     const watermelon=require('../assets/watemelon.png');
     const mother=require('../assets/mother.png');
@@ -29,6 +30,7 @@ const Thirdgame = () => {
             return(
                 <Thirdgamecontent 
                 score={score}
+                id="3"
                 setscore={setscore}
                 imagewatermelon={imagewatermelon} 
                 setImagewatermelon={setImagewatermelon}
@@ -52,6 +54,7 @@ const Thirdgame = () => {
             return(
                 <Thirdgamecontent  
                 score={score}
+                id="2"
                 setscore={setscore}
                 imagewatermelon={imagewatermelon} 
                 setImagewatermelon={setImagewatermelon}
@@ -75,6 +78,7 @@ const Thirdgame = () => {
             return(
                 <Thirdgamecontent  
                 score={score}
+                id="2"
                 setscore={setscore}
                 imagewatermelon={imagewatermelon} 
                 setImagewatermelon={setImagewatermelon}
@@ -98,6 +102,7 @@ const Thirdgame = () => {
             return(
                 <Thirdgamecontent  
                 score={score}
+                id="2"
                 setscore={setscore}
                 imagewatermelon={imagewatermelon} 
                 setImagewatermelon={setImagewatermelon}
@@ -121,6 +126,7 @@ const Thirdgame = () => {
             return(
                 <Thirdgamecontent  
                 score={score}
+                id="2"
                 setscore={setscore}
                 imagewatermelon={imagewatermelon} 
                 setImagewatermelon={setImagewatermelon}
@@ -144,6 +150,7 @@ const Thirdgame = () => {
             return(
                 <Thirdgamecontent  
                 score={score}
+                id="2"
                 setscore={setscore}
                 imagewatermelon={imagewatermelon} 
                 setImagewatermelon={setImagewatermelon}
@@ -167,6 +174,7 @@ const Thirdgame = () => {
             return(
                 <Thirdgamecontent  
                 score={score}
+                id="2"
                 setscore={setscore}
                 imagewatermelon={imagewatermelon} 
                 setImagewatermelon={setImagewatermelon}
@@ -189,13 +197,12 @@ const Thirdgame = () => {
     }
 
     useEffect(() => {
-        setTimeout(() => {
             setImagewatermelon(watermelon);
             setImagemother(mother);
             setImagefather(father);
             setImagecastle(castle)
-        }, 2000);
-      });
+        }
+      ,[next]);
 
     return(
         <View style={styles.all} >
