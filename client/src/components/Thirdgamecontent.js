@@ -30,7 +30,7 @@ const Thirdgamecontent = (props) => {
  
         console.log("waaaaaaaaaaaaaa");
 
-        setTimeout(()=>{ if (ref!=props.id){
+        setTimeout(()=>{ if (ref!=1){
             props.setscore(props.score-1);
             console.log(props.score);}
             props.setNext(props.next)},2000)
@@ -41,8 +41,9 @@ const Thirdgamecontent = (props) => {
          <View>
  
                 <View style={styles.header}>
-                        <View>
-                            <Image source={require('../assets/progresbar1.png')} />          
+                        <View >
+                            <Image style={styles.progresimage} source={require('../assets/progres.png')} />          
+                            <Image  source={props.progresbar} />          
                         </View>
                     
                         <View style={styles.life}>
@@ -87,13 +88,22 @@ const Thirdgamecontent = (props) => {
 const styles = StyleSheet.create({
     header:{
         flexDirection:"row",
-        justifyContent:"space-around",
+        justifyContent:"center",
         alignItems:"center",
         marginTop:"10%"
     },
-    life:{
-        flexDirection:"row",
+    progres:{
+        justifyContent:"center",
         alignItems:"center"
+    },
+    progresimage:{
+        position:"absolute",  
+    },
+    life:{
+        position:"relative", 
+        flexDirection:"row",
+        alignItems:"center",
+        right:"0vh",
     },
     rectangle:{
         marginTop:"6%",
