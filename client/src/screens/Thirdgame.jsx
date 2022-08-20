@@ -1,11 +1,14 @@
 import React, { useState,useEffect } from "react";
 import {Text,Image,View,StyleSheet} from "react-native";
 import Thirdgamecontent from "../components/Thirdgamecontent";
+import WinComponent from "../components/WinComponent";
 
 const Thirdgame = () => {
-
+    
     const [score,setscore]=useState(5);
-    const [hint,sethint]=useState(1);
+    const [hint, sethint] = useState( 1 );
+    const [count, setcount] = useState( 0 );
+   // const [test, settest] = useState( false );
 
     const [homme,sethomme]=useState("Où est l'Homme ?");
     const [femme,setfemme]=useState("Où est la Femme ?");
@@ -13,7 +16,7 @@ const Thirdgame = () => {
     const [garcon,setgarcon]=useState("Où est le Garçon ?");
     const [palais,setpalais]=useState("Où est le Palais?");
     const [pasteque,setpasteque]=useState("Où est la Pastèque ?");
-    const [chien,setchien]=useState("Où est le Chien ?");
+    const [chien, setchien] = useState( "Où est le Chien ?" );
 
     const progresbar1=require('../assets/progresbar1.png');
     const progresbar2=require('../assets/progresbar2.png');
@@ -70,174 +73,225 @@ const Thirdgame = () => {
         {theme:palais,im1:imagecastle,im2:imagemother,im3:imagewatermelon,im4:imagefather,trueim1:imagerightcastle,wrongimg2:imagewrongmother,wrongim3:imagewrongwatermelon,wrongim4:imagewrongfather},
         {theme:bebe,im1:imagebb,im2:imagedog,im3:imagegarcon,im4:imagegrandmother,trueim1:imagerightbb,wrongimg2:imagewrongdog,wrongim3:imagewronggarcon,wrongim4:imagewronggrandmother},
         {theme:garcon,im1:imagegarcon,im2:imagebb,im3:imagefille,im4:imagefamily,trueim1:imagerightgarcon,wrongimg2:imagewrongbb,wrongim3:imagewrongfille,wrongim4:imagewrongfamily},
-        {theme:chien,im1:imagedog,im2:imagefather,im3:imagebb,im4:imagefille,trueim1:imagerightdog,wrongimg2:imagewrongfather,wrongim3:imagewrongbb,wrongim4:imagewrongfille},
-    ].sort(()=> Math.random() - 0.5))});
-
-    const [next, setNext] = useState(levels[0].theme);
-    {console.log("render")}
+        { theme: chien, im1: imagedog, im2: imagefather, im3: imagebb, im4: imagefille, trueim1: imagerightdog, wrongimg2: imagewrongfather, wrongim3: imagewrongbb, wrongim4: imagewrongfille },
+    ].sort( () => Math.random() - 0.5 ) )
+    } );
+    var [next, setNext] = useState(levels[0].theme);
+    {
+        console.log( "render" );
+        console.log( count );
+    }
      
- 
+    
     const Nextfunction=(props)=>{
         const next=props.next;
         console.log(next+"2");
        
             if(next==levels[0].theme){
-                return(
-                    <Thirdgamecontent 
-                    hint={hint}
-                    sethint={sethint}
-                    score={score}
-                    progresbar={progresbar1}
-                    setscore={setscore}
-                    image1={levels[0].im1} 
-                    image2={levels[0].im2}
-                    image3={levels[0].im3} 
-                    image4={levels[0].im4} 
-                    trueim1={levels[0].trueim1}  
-                    wrongim2={levels[0].wrongimg2} 
-                    wrongim3={levels[0].wrongim3} 
-                    wrongim4={levels[0].wrongim4} 
-                    title={levels[0].theme}  
-                    next={levels[1].theme}   
-                    setNext={setNext}
-                  />
+                return (
+                    <View>
+                {count == 7 && score >= 0 && <WinComponent />}
+                    <Thirdgamecontent
+                        hint={hint}
+                        sethint={sethint}
+                        score={score}
+                        progresbar={progresbar1}
+                        setscore={setscore}
+                        image1={levels[0].im1}
+                        image2={levels[0].im2}
+                        image3={levels[0].im3}
+                        image4={levels[0].im4}
+                        trueim1={levels[0].trueim1}
+                        wrongim2={levels[0].wrongimg2}
+                        wrongim3={levels[0].wrongim3}
+                        wrongim4={levels[0].wrongim4}
+                        title={levels[0].theme}
+                        next={levels[1].theme}
+                        setNext={setNext}
+                        count={count}
+                        setcount={setcount}
+                        />
+                        </View>
                 )
-            }
+               
+        }
             if(next==levels[1].theme){
-                return(
-                    <Thirdgamecontent  
+                return (
+                    <View>
+                {count == 7 && score >= 0 && <WinComponent />}
+                  <Thirdgamecontent
                     hint={hint}
                     sethint={sethint}
                     score={score}
                     progresbar={progresbar2}
                     setscore={setscore}
-                    image1={levels[1].im1} 
+                    image1={levels[1].im1}
                     image2={levels[1].im2}
-                    image3={levels[1].im3} 
-                    image4={levels[1].im4} 
-                    trueim1={levels[1].trueim1}  
-                    wrongim2={levels[1].wrongimg2} 
-                    wrongim3={levels[1].wrongim3} 
-                    wrongim4={levels[1].wrongim4}  
-                    title={levels[1].theme}     
-                    next={levels[2].theme}   
+                    image3={levels[1].im3}
+                    image4={levels[1].im4}
+                    trueim1={levels[1].trueim1}
+                    wrongim2={levels[1].wrongimg2}
+                    wrongim3={levels[1].wrongim3}
+                    wrongim4={levels[1].wrongim4}
+                    title={levels[1].theme}
+                    next={levels[2].theme}
                     setNext={setNext}
-                  />
-                )
-            }
+                    count={count}
+                    setcount={setcount}
+                        />
+                        </View>
+                );
+        }
+       
             if(next==levels[2].theme){
-                return(
-                    <Thirdgamecontent  
+                return (
+                    <View>
+                {count == 7 && score >= 0 && <WinComponent />}
+                  <Thirdgamecontent
                     hint={hint}
                     sethint={sethint}
                     score={score}
                     setscore={setscore}
                     progresbar={progresbar3}
-                    image1={levels[2].im1} 
+                    image1={levels[2].im1}
                     image2={levels[2].im2}
-                    image3={levels[2].im3} 
-                    image4={levels[2].im4} 
-                    trueim1={levels[2].trueim1}  
-                    wrongim2={levels[2].wrongimg2} 
-                    wrongim3={levels[2].wrongim3} 
-                    wrongim4={levels[2].wrongim4} 
-                    title={levels[2].theme}   
-                    next={levels[3].theme}    
+                    image3={levels[2].im3}
+                    image4={levels[2].im4}
+                    trueim1={levels[2].trueim1}
+                    wrongim2={levels[2].wrongimg2}
+                    wrongim3={levels[2].wrongim3}
+                    wrongim4={levels[2].wrongim4}
+                    title={levels[2].theme}
+                    next={levels[3].theme}
                     setNext={setNext}
-                  />
-                )
-            } 
+                    count={count}
+                    setcount={setcount}
+                        />
+                        </View>
+                );
+        } 
 
-            if(next==levels[3].theme){
-                return(
-                    <Thirdgamecontent 
-                    hint={hint}
-                    sethint={sethint} 
-                    score={score}
-                    setscore={setscore}
-                    progresbar={progresbar4}
-                    image1={levels[3].im1} 
-                    image2={levels[3].im2}
-                    image3={levels[3].im3} 
-                    image4={levels[3].im4} 
-                    trueim1={levels[3].trueim1}  
-                    wrongim2={levels[3].wrongimg2} 
-                    wrongim3={levels[3].wrongim3} 
-                    wrongim4={levels[3].wrongim4} 
-                    title={levels[3].theme}
-                    next={levels[4].theme}  
-                    setNext={setNext}
-                  />
-                )
-            }
+        if ( next == levels[3].theme ) {
+                
+            return (
+              <View>
+                {count == 7 && score >= 0 && <WinComponent />}
+                <Thirdgamecontent
+                  hint={hint}
+                  sethint={sethint}
+                  score={score}
+                  setscore={setscore}
+                  progresbar={progresbar4}
+                  image1={levels[3].im1}
+                  image2={levels[3].im2}
+                  image3={levels[3].im3}
+                  image4={levels[3].im4}
+                  trueim1={levels[3].trueim1}
+                  wrongim2={levels[3].wrongimg2}
+                  wrongim3={levels[3].wrongim3}
+                  wrongim4={levels[3].wrongim4}
+                  title={levels[3].theme}
+                  next={levels[4].theme}
+                  setNext={setNext}
+                  count={count}
+                  setcount={setcount}
+                />
+              </View>
+            );
+                
+        }
             if(next==levels[4].theme){
-                return(
-                    <Thirdgamecontent 
+                return (
+                    <View>
+                        {( count == 7 && score >= 0 ) && <WinComponent />}
+                  <Thirdgamecontent
                     hint={hint}
-                    sethint={sethint} 
+                    sethint={sethint}
                     score={score}
                     progresbar={progresbar5}
                     setscore={setscore}
-                    image1={levels[4].im1} 
+                    image1={levels[4].im1}
                     image2={levels[4].im2}
-                    image3={levels[4].im3} 
-                    image4={levels[4].im4} 
-                    trueim1={levels[4].trueim1}  
-                    wrongim2={levels[4].wrongimg2} 
-                    wrongim3={levels[4].wrongim3} 
-                    wrongim4={levels[4].wrongim4}  
-                    title={levels[4].theme}  
-                    next={levels[5].theme}   
+                    image3={levels[4].im3}
+                    image4={levels[4].im4}
+                    trueim1={levels[4].trueim1}
+                    wrongim2={levels[4].wrongimg2}
+                    wrongim3={levels[4].wrongim3}
+                    wrongim4={levels[4].wrongim4}
+                    title={levels[4].theme}
+                    next={levels[5].theme}
                     setNext={setNext}
-                  />
-                )
-            }
+                    count={count}
+                    setcount={setcount}
+                        />
+                        </View>
+                );
+        }
             if(next==levels[5].theme){
-                return(
-                    <Thirdgamecontent 
+                return (
+                    <View>
+                        {( count == 7 && score >= 0 ) && <WinComponent />}
+                  <Thirdgamecontent
                     hint={hint}
-                    sethint={sethint} 
+                    sethint={sethint}
                     score={score}
+                    count={count}
                     progresbar={progresbar6}
                     setscore={setscore}
-                    image1={levels[5].im1} 
+                    image1={levels[5].im1}
                     image2={levels[5].im2}
-                    image3={levels[5].im3} 
-                    image4={levels[5].im4} 
-                    trueim1={levels[5].trueim1}  
-                    wrongim2={levels[5].wrongimg2} 
-                    wrongim3={levels[5].wrongim3} 
-                    wrongim4={levels[5].wrongim4}  
-                    title={levels[5].theme}  
-                    next={levels[6].theme}    
+                    image3={levels[5].im3}
+                    image4={levels[5].im4}
+                    trueim1={levels[5].trueim1}
+                    wrongim2={levels[5].wrongimg2}
+                    wrongim3={levels[5].wrongim3}
+                    wrongim4={levels[5].wrongim4}
+                    title={levels[5].theme}
+                    next={levels[6].theme}
                     setNext={setNext}
-                  />
-                )
-            }
+                    setcount={setcount}
+                        />
+                        </View>
+                );
+        }
             if(next==levels[6].theme){
-                return(
+                return (
+                    <View>
+                        {( count == 7 && score >= 0 ) && <WinComponent />}
                     <Thirdgamecontent
-                    hint={hint}
-                    sethint={sethint}  
-                    score={score}
-                    progresbar={progresbar7}
-                    setscore={setscore}
-                    image1={levels[6].im1} 
-                    image2={levels[6].im2}
-                    image3={levels[6].im3} 
-                    image4={levels[6].im4} 
-                    trueim1={levels[6].trueim1}  
-                    wrongim2={levels[6].wrongimg2} 
-                    wrongim3={levels[6].wrongim3} 
-                    wrongim4={levels[6].wrongim4}  
-                    title={levels[6].theme}  
-                    next={levels[6].theme} 
-                    setNext={setNext}
-                  />
-                )
-                }
-    }
+                      hint={hint}
+                      sethint={sethint}
+                      score={score}
+                      progresbar={progresbar7}
+                      setscore={setscore}
+                      image1={levels[6].im1}
+                      image2={levels[6].im2}
+                      image3={levels[6].im3}
+                      image4={levels[6].im4}
+                      trueim1={levels[6].trueim1}
+                      wrongim2={levels[6].wrongimg2}
+                      wrongim3={levels[6].wrongim3}
+                      wrongim4={levels[6].wrongim4}
+                      title={levels[6].theme}
+                      next={levels[6].theme}
+                      setNext={setNext}
+                      count={count}
+                      setcount={setcount}
+                    />
+                  </View>
+                );
+                    
+                
+                
+        }
 
+    }
+                    
+     /*if (count==1 && score >= 0) {
+         return (
+             <WinComponent /> ); 
+     }
+*/
 
      return(
         <View style={styles.all} >

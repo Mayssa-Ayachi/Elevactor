@@ -2,6 +2,7 @@ import React from 'react';
 import {View,Text,StyleSheet,Image,TouchableOpacity} from 'react-native';
 import { Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useTransition } from 'react';
 const {width, height} = Dimensions.get('screen');
 
 
@@ -24,36 +25,38 @@ function WinComponent()
 
 }
 
-const styles=StyleSheet.create({
-    view:{
-        backgroundColor:'white',
-        flex:0.5,
-        top:height/4,
-        width:width*3/4,
-        height:height/2,
-        position:'absolute',
-        alignSelf:"center",
-        borderColor:"black",
-        alignItems:"center",
-        borderRadius:50,
-        borderWidth:10,
-        opacity:1
-    },text:{
-        fontSize:30,
-        marginBottom:10,
-    },
-    button:{
-        alignItems:"center",
-        borderRadius:20,
-        marginTop:"5%",
-        justifyContent:"center"
-    },
-    textbutton:{
-        fontWeight:'bold',
-        color:"white",
-        fontSize:20,
-        paddingVertical:"5%"
-    }
-})
+const styles = StyleSheet.create({
+  view: {
+    backgroundColor: "white",
+    flex:0.5,
+    top: height / 4,
+    width: (width * 3) / 4,
+    height: height / 2,
+    position: "absolute",
+    alignSelf: "center",
+    borderColor: "black",
+    alignItems: "center",
+    borderRadius: 50,
+    borderWidth: 10,
+        opacity: 0.9,
+    zIndex:1,
+  },
+  text: {
+    fontSize: 30,
+    marginBottom: 10,
+  },
+  button: {
+    alignItems: "center",
+    borderRadius: 20,
+    marginTop: "5%",
+    justifyContent: "center",
+  },
+  textbutton: {
+    fontWeight: "bold",
+    color: "white",
+    fontSize: 20,
+    paddingVertical: "5%",
+  },
+});
  
 export default WinComponent;
