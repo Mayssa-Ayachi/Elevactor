@@ -5,6 +5,7 @@ import Thirdgamecontent from "../components/Thirdgamecontent";
 const Thirdgame = () => {
 
     const [score,setscore]=useState(5);
+    const [hint,sethint]=useState(1);
 
     const [homme,sethomme]=useState("Où est l'Homme ?");
     const [femme,setfemme]=useState("Où est la Femme ?");
@@ -83,6 +84,8 @@ const Thirdgame = () => {
             if(next==levels[0].theme){
                 return(
                     <Thirdgamecontent 
+                    hint={hint}
+                    sethint={sethint}
                     score={score}
                     progresbar={progresbar1}
                     setscore={setscore}
@@ -103,6 +106,8 @@ const Thirdgame = () => {
             if(next==levels[1].theme){
                 return(
                     <Thirdgamecontent  
+                    hint={hint}
+                    sethint={sethint}
                     score={score}
                     progresbar={progresbar2}
                     setscore={setscore}
@@ -123,6 +128,8 @@ const Thirdgame = () => {
             if(next==levels[2].theme){
                 return(
                     <Thirdgamecontent  
+                    hint={hint}
+                    sethint={sethint}
                     score={score}
                     setscore={setscore}
                     progresbar={progresbar3}
@@ -143,7 +150,9 @@ const Thirdgame = () => {
 
             if(next==levels[3].theme){
                 return(
-                    <Thirdgamecontent  
+                    <Thirdgamecontent 
+                    hint={hint}
+                    sethint={sethint} 
                     score={score}
                     setscore={setscore}
                     progresbar={progresbar4}
@@ -163,7 +172,9 @@ const Thirdgame = () => {
             }
             if(next==levels[4].theme){
                 return(
-                    <Thirdgamecontent  
+                    <Thirdgamecontent 
+                    hint={hint}
+                    sethint={sethint} 
                     score={score}
                     progresbar={progresbar5}
                     setscore={setscore}
@@ -183,7 +194,9 @@ const Thirdgame = () => {
             }
             if(next==levels[5].theme){
                 return(
-                    <Thirdgamecontent  
+                    <Thirdgamecontent 
+                    hint={hint}
+                    sethint={sethint} 
                     score={score}
                     progresbar={progresbar6}
                     setscore={setscore}
@@ -203,7 +216,9 @@ const Thirdgame = () => {
             }
             if(next==levels[6].theme){
                 return(
-                    <Thirdgamecontent  
+                    <Thirdgamecontent
+                    hint={hint}
+                    sethint={sethint}  
                     score={score}
                     progresbar={progresbar7}
                     setscore={setscore}
@@ -223,13 +238,6 @@ const Thirdgame = () => {
                 }
     }
 
- 
-    useEffect(() => {
-            setImagewatermelon(require('../assets/watemelon.png'));
-            setImagemother(require('../assets/mother.png'));
-            setImagefather(require('../assets/father.png'));
-            setImagecastle(require('../assets/castle.png'))
-        },[next]);
 
      return(
         <View style={styles.all} >

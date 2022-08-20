@@ -1,4 +1,4 @@
-import React, { useState,useEffect, useRef  } from "react";
+import React, { useState  } from "react";
 import {Text,Image,View,StyleSheet,TouchableOpacity} from "react-native";
  
 const Thirdgamecontent = (props) => {
@@ -12,7 +12,6 @@ const Thirdgamecontent = (props) => {
       {im: props.image5, id: 5, imc: props.wrongim5},
     ].sort(() => Math.random() - 0.5);});
 
-    {console.log(images)}
     const [img0,setimg0]=useState(images[0].im);
     const [imgc0,setimgc0]=useState(images[0].imc);
 
@@ -28,34 +27,47 @@ const Thirdgamecontent = (props) => {
     const [imgc4, setimgc4] = useState(images[4].imc);
 
     const press=(ref)=>{
-       
-
         setimg0(imgc0);
         setimg1(imgc1);
         setimg2(imgc2);
         setimg3(imgc3);
  
-        console.log("waaaaaaaaaaaaaa");
-
         setTimeout(()=>{ if (ref!=1){
-            props.setscore(props.score-1);
-            console.log(props.score);}
+            props.setscore(props.score-1);}
             props.setNext(props.next)},2000)
-     }
-const pressHandler = (ref) => {
-  setimg0(imgc0);
-  setimg1(imgc1);
-  setimg2(imgc2);
-    setimg3( imgc3 );
-    setimg4( imgc4 );
-  setTimeout(() => {
-    if (ref == 5) {
-      console.log(props.score);
     }
-    props.setNext(props.next);
-  }, 2000);
-};
- 
+
+    const Hint=()=>{
+        if(props.hint==1){
+            setimg0(imgc0);
+            setimg1(imgc1);
+            setimg2(imgc2);
+            setimg3(imgc3);
+            
+        setTimeout(()=>{props.sethint(2);
+            props.setNext(props.next)},2000)}
+        }
+    
+    const Imagehint=()=>{
+        if(props.hint==1){
+            return(
+                <View style={styles.lampe}>
+                <TouchableOpacity onPress={()=>Hint()}>
+                    <Image style={styles.progress} source={require('../assets/lampenonalumée.png')} /> 
+                    <Image source={require('../assets/light.png')} /> 
+                </TouchableOpacity>                   
+                </View>       
+            )
+        }
+        else{
+            return(
+                <View style={styles.lampe}>
+                    <Image source={require('../assets/lampenonalumée.png')} /> 
+                </View>
+            )
+        }           
+    }
+
     return(
          <View>
  
@@ -102,10 +114,7 @@ const pressHandler = (ref) => {
                 </View>
                 </View>
  
-            {/*<View style={styles.lampe}>
-                    <Image source={require('../assets/lampenonalumée.png')} />               
-    </View>*/}
-
+                <Imagehint/>
              
           </View>        
     );
@@ -117,10 +126,6 @@ const styles = StyleSheet.create({
         justifyContent:"space-around",
         alignItems:"center",
         marginTop:"10%"
-    },
-    progres:{
-        justifyContent:"center",
-        alignItems:"center"
     },
     progresimage:{
         position:"absolute",  
@@ -153,8 +158,11 @@ const styles = StyleSheet.create({
     },
     lampe:{
         marginLeft:"auto",
-        marginRight: "auto",  
-    
+        marginRight:"auto",  
+        alignItems:"center"
+    },
+    progress:{
+        position:"absolute",
     },
     new:{
         margin:"50%"
