@@ -142,12 +142,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    marginTop: "10%",
+    marginTop: "5%",
   },
   progresimage: {
     position: "absolute",
   },
-  life: {
+    life: {
     position: "relative",
     flexDirection: "row",
     alignItems: "center",
