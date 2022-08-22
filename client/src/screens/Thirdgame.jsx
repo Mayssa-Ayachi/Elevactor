@@ -286,12 +286,6 @@ const Thirdgame = () => {
         }
 
     }
-                    
-     /*if (count==1 && score >= 0) {
-         return (
-             <WinComponent /> ); 
-     }
-*/
 
      return(
         <View style={styles.all} >
