@@ -47,11 +47,12 @@ const Thirdgamecontent = (props) => {
       setimg1(imgc1);
       setimg2(imgc2);
       setimg3( imgc3 );
-      props.setcount(props.count + 1); 
+      
 
       setTimeout(() => {
         props.sethint(2);
-        props.setNext(props.next);
+        props.setNext( props.next );
+        props.setcount(props.count + 1); 
       }, 1000);
     }
   };
