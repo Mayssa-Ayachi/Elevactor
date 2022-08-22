@@ -26,30 +26,37 @@ const Thirdgame = () => {
     const [imagewatermelon, setImagewatermelon] = useState(require('../assets/watemelon.png'));
     const [imagewrongwatermelon, setwrongwatermelon] = useState(require('../assets/wrongwatermelon.png'));
     const [imagerightwatermelon, setrightwatermelon] = useState(require('../assets/rightwatemelon.png'));
+    const [imagehintwatermelon, sethintwatermelon] = useState(require('../assets/hintwatermelon.png'));
 
     const [imagemother, setImagemother] = useState(require('../assets/mother.png'));
     const [imagewrongmother, setwrongmother] = useState(require('../assets/wrongmother.png'));
     const [imagerightmother, setrightmother] = useState(require('../assets/rightmother.png'));
+    const [imagehintmother, sethintmother] = useState(require('../assets/hintmother.png'));
 
     const [imagefather, setImagefather] = useState(require('../assets/father.png'));
     const [imagerightfather, setrightfather] = useState(require('../assets/rightfather.png'));
     const [imagewrongfather, setwrongfather] = useState(require('../assets/wrongfather.png'));
+    const [imagehintfather, sethintfather] = useState(require('../assets/hintfather.png'));
 
     const [imagecastle, setImagecastle] = useState(require('../assets/castle.png'));
     const [imagewrongcastle, setwrongcastle] = useState(require('../assets/wrongcastle.png'));
     const [imagerightcastle, setrightcastle] = useState(require('../assets/rightcastle.png'));
+    const [imagehintcastle, sethintcastle] = useState(require('../assets/hintcastle.png'));
 
     const [imagebb, setImagebb] = useState(require('../assets/bb.png'));
     const [imagewrongbb, setwrongbb] = useState(require('../assets/wrongbebe.png'));
     const [imagerightbb, setrightbb] = useState(require('../assets/truebb.png'));
+    const [imagehintbb, sethintbb] = useState(require('../assets/hintbb.png'));
 
     const [imagedog, setImagedog] = useState(require('../assets/dog.png'));
     const [imagewrongdog, setwrongdog] = useState(require('../assets/wrongdog.png'));
     const [imagerightdog, setrightdog] = useState(require('../assets/truedog.png'));
+    const [imagehintdog, sethintdog] = useState(require('../assets/hintdog.png'));
 
     const [imagegarcon, setImagegarcon] = useState(require('../assets/garcon.png'));
     const [imagewronggarcon, setwronggarcon] = useState(require('../assets/wrongboy.png'));
     const [imagerightgarcon, setrightgarcon] = useState(require('../assets/truegarcon.png'));
+    const [imagehintgarcon, sethintgarcon] = useState(require('../assets/hintgarcon.png'));
 
     const [imagegrandmother, setImagegrandmother] = useState(require('../assets/grandmother.png'));
     const [imagewronggrandmother, setwronggrandmother] = useState(require('../assets/wronggrandmother.png'));
@@ -61,13 +68,13 @@ const Thirdgame = () => {
     const [imagewrongfamily, setwrongfamily] = useState(require('../assets/wrongfam.png'));
 
     const [levels,setlevels]=useState(()=>{return([
-        {theme:homme,im1:imagefather,im2:imagemother,im3:imagewatermelon,im4:imagecastle,trueim1:imagerightfather,wrongimg2:imagewrongmother,wrongim3:imagewrongwatermelon,wrongim4:imagewrongcastle},
-        {theme:femme,im1:imagemother,im2:imagebb,im3:imagedog,im4:imagecastle,trueim1:imagerightmother,wrongimg2:imagewrongbb,wrongim3:imagewrongdog,wrongim4:imagewrongcastle},
-        {theme:pasteque,im1:imagewatermelon,im2:imagefather,im3:imagegarcon,im4:imagecastle,trueim1:imagerightwatermelon,wrongimg2:imagewrongfather,wrongim3:imagewronggarcon,wrongim4:imagewrongcastle},
-        {theme:palais,im1:imagecastle,im2:imagemother,im3:imagewatermelon,im4:imagefather,trueim1:imagerightcastle,wrongimg2:imagewrongmother,wrongim3:imagewrongwatermelon,wrongim4:imagewrongfather},
-        {theme:bebe,im1:imagebb,im2:imagedog,im3:imagegarcon,im4:imagegrandmother,trueim1:imagerightbb,wrongimg2:imagewrongdog,wrongim3:imagewronggarcon,wrongim4:imagewronggrandmother},
-        {theme:garcon,im1:imagegarcon,im2:imagebb,im3:imagefille,im4:imagefamily,trueim1:imagerightgarcon,wrongimg2:imagewrongbb,wrongim3:imagewrongfille,wrongim4:imagewrongfamily},
-        {theme:chien,im1:imagedog,im2:imagefather,im3:imagebb,im4:imagefille,trueim1:imagerightdog,wrongimg2:imagewrongfather,wrongim3:imagewrongbb,wrongim4:imagewrongfille},
+        {theme:homme,imghint:imagehintfather,im1:imagefather,im2:imagemother,im3:imagewatermelon,im4:imagecastle,trueim1:imagerightfather,wrongimg2:imagewrongmother,wrongim3:imagewrongwatermelon,wrongim4:imagewrongcastle},
+        {theme:femme,imghint:imagehintmother,im1:imagemother,im2:imagebb,im3:imagedog,im4:imagecastle,trueim1:imagerightmother,wrongimg2:imagewrongbb,wrongim3:imagewrongdog,wrongim4:imagewrongcastle},
+        {theme:pasteque,imghint:imagehintwatermelon,im1:imagewatermelon,im2:imagefather,im3:imagegarcon,im4:imagecastle,trueim1:imagerightwatermelon,wrongimg2:imagewrongfather,wrongim3:imagewronggarcon,wrongim4:imagewrongcastle},
+        {theme:palais,imghint:imagehintcastle,im1:imagecastle,im2:imagemother,im3:imagewatermelon,im4:imagefather,trueim1:imagerightcastle,wrongimg2:imagewrongmother,wrongim3:imagewrongwatermelon,wrongim4:imagewrongfather},
+        {theme:bebe,imghint:imagehintbb,im1:imagebb,im2:imagedog,im3:imagegarcon,im4:imagegrandmother,trueim1:imagerightbb,wrongimg2:imagewrongdog,wrongim3:imagewronggarcon,wrongim4:imagewronggrandmother},
+        {theme:garcon,imghint:imagehintgarcon,im1:imagegarcon,im2:imagebb,im3:imagefille,im4:imagefamily,trueim1:imagerightgarcon,wrongimg2:imagewrongbb,wrongim3:imagewrongfille,wrongim4:imagewrongfamily},
+        {theme:chien,imghint:imagehintdog,im1:imagedog,im2:imagefather,im3:imagebb,im4:imagefille,trueim1:imagerightdog,wrongimg2:imagewrongfather,wrongim3:imagewrongbb,wrongim4:imagewrongfille},
     ].sort(()=> Math.random() - 0.5))});
 
     const [next, setNext] = useState(levels[0].theme);
@@ -82,6 +89,7 @@ const Thirdgame = () => {
                 return(
                     <Thirdgamecontent 
                     hint={hint}
+                    imghint={levels[0].imghint}
                     sethint={sethint}
                     score={score}
                     progresbar={progresbar1}
@@ -104,6 +112,7 @@ const Thirdgame = () => {
                 return(
                     <Thirdgamecontent  
                     hint={hint}
+                    imghint={levels[1].imghint}
                     sethint={sethint}
                     score={score}
                     progresbar={progresbar2}
@@ -126,6 +135,7 @@ const Thirdgame = () => {
                 return(
                     <Thirdgamecontent  
                     hint={hint}
+                    imghint={levels[2].imghint}
                     sethint={sethint}
                     score={score}
                     setscore={setscore}
@@ -149,6 +159,7 @@ const Thirdgame = () => {
                 return(
                     <Thirdgamecontent 
                     hint={hint}
+                    imghint={levels[3].imghint}
                     sethint={sethint} 
                     score={score}
                     setscore={setscore}
@@ -171,6 +182,7 @@ const Thirdgame = () => {
                 return(
                     <Thirdgamecontent 
                     hint={hint}
+                    imghint={levels[4].imghint}
                     sethint={sethint} 
                     score={score}
                     progresbar={progresbar5}
@@ -193,6 +205,7 @@ const Thirdgame = () => {
                 return(
                     <Thirdgamecontent 
                     hint={hint}
+                    imghint={levels[5].imghint}
                     sethint={sethint} 
                     score={score}
                     progresbar={progresbar6}
@@ -215,6 +228,7 @@ const Thirdgame = () => {
                 return(
                     <Thirdgamecontent
                     hint={hint}
+                    imghint={levels[6].imghint}
                     sethint={sethint}  
                     score={score}
                     progresbar={progresbar7}
