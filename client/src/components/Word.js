@@ -50,7 +50,7 @@ function Word({ i, j, elem, font, point, pressed, word, setWord }) {
             <RoundedRect width={SQUARE_SIZE}
                 height={SQUARE_SIZE}
                 x={x} y={y}
-                color={(pressed.current[i][j]) ? 'blue' : 'red'} />
+                color={(pressed.current[i][j]) ? '#9B51B4' : 'white'} />
             <Text
                 text={elem} x={(i * (SQUARE_SIZE + PADDING)) + (SQUARE_SIZE / 4) + (PADDING / 2)}
                 y={((j + 1) * (SQUARE_SIZE + PADDING)) + 25 + (SQUARE_SIZE / 4)} font={font} />

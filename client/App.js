@@ -26,6 +26,7 @@ import ThemeScreen from "./src/screens/ThemeScreen";
 import Language from "./src/screens/Language";
 import Sudoku from "./src/screens/Sudoku";
 import SummaryScreen from "./src/screens/SummaryScreen";
+
 const navigator = createStackNavigator(
   {
     SignIn: SignInScreen,
@@ -56,6 +57,7 @@ const navigator = createStackNavigator(
   },
   {
     initialRouteName: "SummaryScreen",
+
     defaultNavigationOptions: {
       title: "StartScreen",
       headerShown: false,
