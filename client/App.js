@@ -25,6 +25,7 @@ import GameScreen from "./src/screens/GameScreen";
 import ThemeScreen from "./src/screens/ThemeScreen";
 import Language from "./src/screens/Language";
 import Sudoku from "./src/screens/Sudoku";
+import SummaryScreen from "./src/screens/SummaryScreen";
 const navigator = createStackNavigator(
   {
     SignIn: SignInScreen,
@@ -50,10 +51,11 @@ const navigator = createStackNavigator(
     Game: GameScreen,
     Language: Language,
     Theme: ThemeScreen,
-    Sudoku:Sudoku
+    Sudoku:Sudoku,
+    SummaryScreen : SummaryScreen,
   },
   {
-    initialRouteName: "Sudoku",
+    initialRouteName: "SummaryScreen",
     defaultNavigationOptions: {
       title: "StartScreen",
       headerShown: false,
