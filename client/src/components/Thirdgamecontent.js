@@ -5,8 +5,9 @@ const Thirdgamecontent = (props) => {
      
     const [hint,sethint]=useState(props.hint);
 
-    const [images,setimages]=useState(()=>{return([{im:props.image1,id:1,imc:props.trueim1,imghint:props.imghint},{im:props.image2,id:2,imc:props.wrongim2,imghint:props.image2},
-        {im:props.image3,id:3,imc:props.wrongim3,imghint:props.image3},{im:props.image4,id:4,imc:props.wrongim4,imghint:props.image4}].sort(()=> Math.random() - 0.5))});
+    const [images,setimages]=useState(()=>
+    {return([{im:props.image1,id:1,imc:props.trueim1,imghint:props.imghint},{im:props.image2,id:2,imc:props.wrongim2,imghint:props.image2},
+    {im:props.image3,id:3,imc:props.wrongim3,imghint:props.image3},{im:props.image4,id:4,imc:props.wrongim4,imghint:props.image4}].sort(()=> Math.random() - 0.5))});
 
     const [img0,setimg0]=useState(images[0].im);
     const [imgc0,setimgc0]=useState(images[0].imc);
@@ -30,9 +31,19 @@ const Thirdgamecontent = (props) => {
         setimg2(imgc2);
         setimg3(imgc3);
  
-        setTimeout(()=>{ if (ref!=1){
-            props.setscore(props.score-1);}
+        setTimeout(()=>{ 
+            if (ref!=1){
+                if(props.score==-1){
+                    props.setscore(0);
+                }
+                else{
+                    props.setscore(props.score-1);
+                }
+           
+            }
+
             props.sethint(hint);
+            props.setcount(props.count+1);
             props.setNext(props.next)},2000)
     }
 
@@ -82,7 +93,10 @@ const Thirdgamecontent = (props) => {
                     
                         <View style={styles.life}>
                             <Image source={require('../assets/love-02.png')} />
-                            <Text style={{color:"#FF5E43",fontWeight:"bold",fontSize:27}}>{props.score}</Text>
+                            {props.score!=-1 && <Text style={{color:"#FF5E43",fontWeight:"bold",fontSize:27}}>{props.score}</Text>}
+                            
+                            {props.score==-1 && <Text style={{color:"#FF5E43",fontWeight:"bold",fontSize:27}}>{props.score=0 }</Text>}
+                             
                         </View>
                 </View>    
 

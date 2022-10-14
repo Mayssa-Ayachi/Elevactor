@@ -1,11 +1,13 @@
 import React, { useState,useEffect } from "react";
-import {Text,Image,View,StyleSheet} from "react-native";
+import {Image,View,StyleSheet} from "react-native";
 import Thirdgamecontent from "../components/Thirdgamecontent";
+import ReplayComponent from "../components/ReplayComponent";
 
 const Thirdgame = () => {
 
     const [score,setscore]=useState(5);
     const [hint,sethint]=useState(1);
+    const [count, setcount] = useState( 0 );
 
     const [homme,sethomme]=useState("Où est l'Homme ?");
     const [femme,setfemme]=useState("Où est la Femme ?");
@@ -87,6 +89,11 @@ const Thirdgame = () => {
        
             if(next==levels[0].theme){
                 return(
+                    <View>
+                {count == 7 && score >= 0 && <WinnComponent />
+                || score < 0 && <ReplayComponent />}
+                
+
                     <Thirdgamecontent 
                     hint={hint}
                     imghint={levels[0].imghint}
@@ -105,11 +112,19 @@ const Thirdgame = () => {
                     title={levels[0].theme}  
                     next={levels[1].theme}   
                     setNext={setNext}
+                    count={count}
+                    setcount={setcount}
+
                   />
+                  </View>
                 )
             }
             if(next==levels[1].theme){
                 return(
+                    <View>
+                        {count == 7 && score >= 0 && <WinnComponent />
+                ||score <0 && <ReplayComponent />}
+
                     <Thirdgamecontent  
                     hint={hint}
                     imghint={levels[1].imghint}
@@ -128,11 +143,17 @@ const Thirdgame = () => {
                     title={levels[1].theme}     
                     next={levels[2].theme}   
                     setNext={setNext}
+                    count={count}
+                    setcount={setcount}
                   />
+                  </View>
                 )
             }
             if(next==levels[2].theme){
                 return(
+                    <View>
+                       {count == 7 && score >= 0 && <WinnComponent />
+                || score <0 && <ReplayComponent />}
                     <Thirdgamecontent  
                     hint={hint}
                     imghint={levels[2].imghint}
@@ -151,12 +172,18 @@ const Thirdgame = () => {
                     title={levels[2].theme}   
                     next={levels[3].theme}    
                     setNext={setNext}
+                    count={count}
+                    setcount={setcount}
                   />
+                  </View>
                 )
             } 
 
             if(next==levels[3].theme){
                 return(
+                    <View>
+                        {count == 7 && score >=0  && <WinnComponent />
+                || score <0 && <ReplayComponent />}
                     <Thirdgamecontent 
                     hint={hint}
                     imghint={levels[3].imghint}
@@ -175,11 +202,17 @@ const Thirdgame = () => {
                     title={levels[3].theme}
                     next={levels[4].theme}  
                     setNext={setNext}
+                    count={count}
+                    setcount={setcount}
                   />
+                  </View>
                 )
             }
             if(next==levels[4].theme){
                 return(
+                    <View>
+                        {count == 7 && score >= 0 && <WinnComponent />
+                ||score <0 && <ReplayComponent />}
                     <Thirdgamecontent 
                     hint={hint}
                     imghint={levels[4].imghint}
@@ -198,11 +231,17 @@ const Thirdgame = () => {
                     title={levels[4].theme}  
                     next={levels[5].theme}   
                     setNext={setNext}
+                    count={count}
+                    setcount={setcount}
                   />
+                  </View>
                 )
             }
             if(next==levels[5].theme){
                 return(
+                    <View>
+                       {count == 7 && score >= 0 && <WinnComponent />
+                || score <0 && <ReplayComponent />}
                     <Thirdgamecontent 
                     hint={hint}
                     imghint={levels[5].imghint}
@@ -221,11 +260,18 @@ const Thirdgame = () => {
                     title={levels[5].theme}  
                     next={levels[6].theme}    
                     setNext={setNext}
+                    count={count}
+                    setcount={setcount}
                   />
+                  </View>
                 )
             }
             if(next==levels[6].theme){
                 return(
+                    <View>
+                    {count == 7 && score >= 0 && <WinnComponent />
+                ||  score <0 && <ReplayComponent />}
+
                     <Thirdgamecontent
                     hint={hint}
                     imghint={levels[6].imghint}
@@ -244,7 +290,10 @@ const Thirdgame = () => {
                     title={levels[6].theme}  
                     next={levels[6].theme} 
                     setNext={setNext}
+                    count={count}
+                    setcount={setcount}
                   />
+                  </View>   
                 )
                 }
     }
