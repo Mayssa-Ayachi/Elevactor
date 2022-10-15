@@ -52,7 +52,7 @@ const navigator = createStackNavigator(
     Thirdgame:Thirdgame,
   },
   {
-    initialRouteName: "Next",
+    initialRouteName: "StartScreen",
     defaultNavigationOptions: {
       title: "StartScreen",
       headerShown: false,
