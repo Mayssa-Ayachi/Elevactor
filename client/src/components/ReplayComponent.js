@@ -2,18 +2,17 @@ import React from 'react';
 import {View,Text,StyleSheet,Image,TouchableOpacity,Button} from 'react-native';
 import { Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useTransition } from 'react';
 const {width, height} = Dimensions.get('screen');
 
 
-function ReplayComponent({navigation})
+function ReplayComponent(props)
 {
     return (    
             <View style={styles.view}>
         <Image style={styles.img}source={require("../assets/replay.png")} />
         <Text style={styles.text}>Tu peux 
             le faire mon héro !</Text>
-        <TouchableOpacity style={{width:"50%",height:"20%"}}>
+        <TouchableOpacity style={{width:"50%",height:"20%"}} onPress={()=>{props.navigation.navigate("Next")}}>
         <LinearGradient
         colors={['#5E77FF', '#3DDBFE']}
         start={{x: 0, y: 0}}

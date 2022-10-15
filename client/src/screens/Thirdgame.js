@@ -2,8 +2,9 @@ import React, { useState,useEffect } from "react";
 import {Image,View,StyleSheet} from "react-native";
 import Thirdgamecontent from "../components/Thirdgamecontent";
 import ReplayComponent from "../components/ReplayComponent";
+import WinnComponent from "../components/Winncomponent";
 
-const Thirdgame = () => {
+const Thirdgame = (props) => {
 
     const [score,setscore]=useState(5);
     const [hint,sethint]=useState(1);
@@ -90,8 +91,8 @@ const Thirdgame = () => {
             if(next==levels[0].theme){
                 return(
                     <View>
-                {count == 7 && score >= 0 && <WinnComponent />
-                || score < 0 && <ReplayComponent />}
+                {count == 7 && score >= 0 && <WinnComponent navigation={props.navigation}/>
+                || score < 0 && <ReplayComponent navigation={props.navigation}/>}
                 
 
                     <Thirdgamecontent 
@@ -122,8 +123,8 @@ const Thirdgame = () => {
             if(next==levels[1].theme){
                 return(
                     <View>
-                        {count == 7 && score >= 0 && <WinnComponent />
-                ||score <0 && <ReplayComponent />}
+                        {count == 7 && score >= 0 && <WinnComponent navigation={props.navigation}/>
+                ||score <0 && <ReplayComponent navigation={props.navigation}/>}
 
                     <Thirdgamecontent  
                     hint={hint}
@@ -152,8 +153,8 @@ const Thirdgame = () => {
             if(next==levels[2].theme){
                 return(
                     <View>
-                       {count == 7 && score >= 0 && <WinnComponent />
-                || score <0 && <ReplayComponent />}
+                       {count == 7 && score >= 0 && <WinnComponent navigation={props.navigation}/>
+                || score <0 && <ReplayComponent navigation={props.navigation}/>}
                     <Thirdgamecontent  
                     hint={hint}
                     imghint={levels[2].imghint}
@@ -182,8 +183,8 @@ const Thirdgame = () => {
             if(next==levels[3].theme){
                 return(
                     <View>
-                        {count == 7 && score >=0  && <WinnComponent />
-                || score <0 && <ReplayComponent />}
+                        {count == 7 && score >=0  && <WinnComponent navigation={props.navigation} />
+                || score <0 && <ReplayComponent navigation={props.navigation}/>}
                     <Thirdgamecontent 
                     hint={hint}
                     imghint={levels[3].imghint}
@@ -211,8 +212,8 @@ const Thirdgame = () => {
             if(next==levels[4].theme){
                 return(
                     <View>
-                        {count == 7 && score >= 0 && <WinnComponent />
-                ||score <0 && <ReplayComponent />}
+                        {count == 7 && score >= 0 && <WinnComponent navigation={props.navigation}/>
+                ||score <0 && <ReplayComponent navigation={props.navigation}/>}
                     <Thirdgamecontent 
                     hint={hint}
                     imghint={levels[4].imghint}
@@ -240,8 +241,8 @@ const Thirdgame = () => {
             if(next==levels[5].theme){
                 return(
                     <View>
-                       {count == 7 && score >= 0 && <WinnComponent />
-                || score <0 && <ReplayComponent />}
+                       {count == 7 && score >= 0 && <WinnComponent navigation={props.navigation}/>
+                || score <0 && <ReplayComponent navigation={props.navigation}/>}
                     <Thirdgamecontent 
                     hint={hint}
                     imghint={levels[5].imghint}
@@ -269,8 +270,8 @@ const Thirdgame = () => {
             if(next==levels[6].theme){
                 return(
                     <View>
-                    {count == 7 && score >= 0 && <WinnComponent />
-                ||  score <0 && <ReplayComponent />}
+                    {count == 7 && score >= 0 && <WinnComponent navigation={props.navigation}/>
+                ||  score <0 && <ReplayComponent navigation={props.navigation}/>}
 
                     <Thirdgamecontent
                     hint={hint}
@@ -308,7 +309,7 @@ const Thirdgame = () => {
                     <Image style={{ marginRight: 15, marginTop: 20 }} source={require('../assets/home.png')} />
                 </View>
             </View>
-         <Nextfunction next={next}/>
+         <Nextfunction next={next} navigation={props.navigation}/>
         </View>
     );
 };
@@ -320,7 +321,9 @@ const styles = StyleSheet.create({
     },
     container1: {
         flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        marginBottom: "5%"
+
     },
     all: {
         backgroundColor: 'white', flex: 1

@@ -13,7 +13,6 @@ import LoadingScreen from "./src/screens/loadingscreen2";
 import NextScreen from "./src/screens/nextscreen";
 import Level1Screen from "./src/screens/level1screen";
 import Level2Screen from "./src/screens/level2screen";
-import Level3Screen from "./src/screens/level3screen";
 import Level4Screen from "./src/screens/level4screen";
 import Level5Screen from "./src/screens/level5screen";
 import Level6Screen from "./src/screens/level6screen";
@@ -40,7 +39,6 @@ const navigator = createStackNavigator(
     Next: NextScreen,
     level1: Level1Screen,
     level2: Level2Screen,
-    level3: Level3Screen,
     level4: Level4Screen,
     level5: Level5Screen,
     level6: Level6Screen,
@@ -54,7 +52,7 @@ const navigator = createStackNavigator(
     Thirdgame:Thirdgame,
   },
   {
-    initialRouteName: "Thirdgame",
+    initialRouteName: "Next",
     defaultNavigationOptions: {
       title: "StartScreen",
       headerShown: false,

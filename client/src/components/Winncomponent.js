@@ -6,13 +6,13 @@ import { useTransition } from 'react';
 const {width, height} = Dimensions.get('screen');
 
 
-function WinnComponent()
+function WinnComponent(props )
 {
     return (    
             <View style={styles.view}>
         <Image source={require("../assets/water.png")} />
         <Text style={styles.text}>Bravo mon Héro</Text>
-        <TouchableOpacity style={{width:"50%",height:"20%"}}>
+        <TouchableOpacity style={{width:"50%",height:"20%"}} onPress={()=>{props.navigation.navigate("Next")}}>
         <LinearGradient
         colors={['#5E77FF', '#3DDBFE']}
         start={{x: 0, y: 0}}
