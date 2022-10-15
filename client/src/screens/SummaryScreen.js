@@ -1,9 +1,15 @@
 import React from 'react';
-import { StyleSheet, View , Text , ImageBackground} from 'react-native';
+import { StyleSheet, View , Text , ScrollView,screenWidth} from 'react-native';
 import { BarChart } from "react-native-gifted-charts";
-import {showGradient} from "react-native-linear-gradient";
+import { LinearGradient } from 'expo-linear-gradient';
+import Donut from '../components/Pie';
+import Creativity from '../assets/creativity.png'
+import Langues from '../assets/languages.png';
+import Mental from '../assets/mental.png';
+import Sciences from '../assets/science.png';
 
 export default function SummaryScreen(){
+
     const barData = [
         {value: 650, label: 'M' , labelTextStyle: {color: '#4A1290'},},
         {value: 500, label: 'T',labelTextStyle: {color: '#4A1290'},},
@@ -13,13 +19,41 @@ export default function SummaryScreen(){
         {value:380, label: 'S' , labelTextStyle: {color: '#4A1290'},},
         {value: 280, label: 'S' , labelTextStyle: {color: '#4A1290'},},
     ];
+
+    const data = [{
+        percentage: 8,
+        color: '#00D27D',
+        max: 10,
+        text:'Langue',
+        image : require('../assets/languages.png')
+      }, {
+        percentage: 14,
+        color: '#8490FF',
+        max: 20,
+        text:'Dev',
+        image :require('../assets/mental.png')
+      }, {
+        percentage: 92,
+        color: '#F09CB0',
+        max: 100,
+        text:'Science',
+        image : require('../assets/science.png')
+      }, {
+        percentage: 240,
+        color: '#614AD3',
+        max: 500,
+        text:'Art',
+        image :require('../assets/creativity.png')
+      },
+      ]
+
     return (
         <View>
-            {/* <ImageBackground source={require('../assets/BGIMAGE.png')} style={styles.image} resizeMode="cover" > */}
+            <LinearGradient  colors={['#9B51B4', '#fff']} style={styles.linearGradient}>
+                <Text style={styles.text1}>PARENT</Text>
             <Text style={styles.text}>SUMMARY</Text>
         <View
         style={{
-            // backgroundColor: '#333340',
             paddingBottom: 40,
             borderRadius: 10,
             marginTop: '55%',
@@ -31,16 +65,22 @@ export default function SummaryScreen(){
         frontColor={'#837DFF'}
         barWidth={15}
         barBorderRadius={8}
-        // noOfSections={1}
         yAxisThickness={0}
         xAxisThickness={0}
         disablePress
         isAnimated
         hideYAxisText
         hideRules
+        ShowGradient={true}
+        gradientColor={'#09F9BF'}
         />
         </View>
-        {/* </ImageBackground> */}
+        <ScrollView horizontal={true} style={styles.scroll}>
+                    {data.map((p, i) => {
+                        return <Donut key={i} percentage={p.percentage} color={p.color} delay={500 + 100 * i} max={p.max} text={p.text} image={p.image}/>
+                        })}
+        </ScrollView>
+        </LinearGradient>
         </View>
     )
 }
@@ -54,8 +94,29 @@ const styles = StyleSheet.create({
         fontWeight:'700',
         fontSize:20,
    } ,
-   image: {
-    position:'absolute',
-    flex: 1,
+  linearGradient : {
+    height: '100%',
+    width: screenWidth,
   },
+  text1 :{
+    marginTop:'15%',
+        marginLeft:'9%',
+        position:'absolute',
+        color: "#fff",
+            textShadowColor: "rgba(255,255,255,0.8)",
+            textShadowOffset: {
+              width: 0,
+              height: 0,
+            },
+        textShadowRadius: 10,
+        fontWeight:'800',
+        fontSize:30,
+  } ,
+  scroll : {
+    marginTop : '5%',
+    marginLeft:'6%'
+  },
+  container: {
+    margin :'10%'
+  }
 })
