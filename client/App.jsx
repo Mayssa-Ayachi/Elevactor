@@ -25,6 +25,9 @@ import GameScreen from "./src/screens/GameScreen";
 import ThemeScreen from "./src/screens/ThemeScreen";
 import Language from "./src/screens/Language";
 import Thirdgame from "./src/screens/Thirdgame";
+import ParentlangScreen from "./src/screens/parentlang";
+import Parentnav from "./src/components/parentnav";
+import ChatScreen from "./src/screens/chatscreen";
 
 const navigator = createStackNavigator(
   {
@@ -51,10 +54,13 @@ const navigator = createStackNavigator(
     Game: GameScreen,
     Language: Language,
     Theme: ThemeScreen,
-    Thirdgame:Thirdgame,
+    Thirdgame: Thirdgame,
+    parentlang: ParentlangScreen,
+    Parentnav: Parentnav,
+    ChatScreen: ChatScreen,
   },
   {
-    initialRouteName: "Thirdgame",
+    initialRouteName: "ChatScreen",
     defaultNavigationOptions: {
       title: "StartScreen",
       headerShown: false,
