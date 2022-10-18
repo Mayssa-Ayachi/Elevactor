@@ -1,20 +1,28 @@
 import React, { useState } from "react";
 
-import { Text, View, FlatList, TouchableOpacity,StyleSheet,Image,ScrollView } from "react-native";
+import {
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  ScrollView,
+  ImageBackground,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 const NextScreen = ({navigation}) => {
       const [level, setlevel] = useState([
-        {name: "1", id: "a"},
-        {name: "2", id: "b" } ,
-        {name: "3", id: "c"},
-        {name: "4", id: "d" },
-        {name: "5", id: "e" },
-        {name: "6", id: "f"},
-        {name: "7", id: "g"},
-        {name: "8", id: "h"},
-        {name: "9", id: "i"},
-        {name: "10", id: "j",},
-
+        {name: "1", id: "a", image: require("../assets/level1.png")},
+        {name: "2", id: "b", image: require("../assets/level2.png")},
+        {name: "3", id: "c", image: require("../assets/level3.png")},
+        {name: "4", id: "d", image: require("../assets/level4.png")},
+        {name: "5", id: "e", image: require("../assets/level5.png")},
+        {name: "6", id: "f", image: require("../assets/level6.png")},
+        {name: "7", id: "g", image: require("../assets/level7.png")},
+        {name: "8", id: "h", image: require("../assets/level8.png")},
+        {name: "9", id: "i", image: require("../assets/level9.png")},
+        {name: "10", id: "j", image: require("../assets/level10.png")},
       ]);
   const navigating = ( id ) => {
     switch (id) {
@@ -52,77 +60,45 @@ const NextScreen = ({navigation}) => {
   };
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Image style={styles.img} source={require("../../assets/france.png")} />
-      </View>
-      <View style={styles.list}>
-        <FlatList
-          numColumns={2}
-          style={styles.touchable}
-          keyExtractor={(item) => item.id}
-          data={level}
-          renderItem={({item}) => {
-            return (
-              <TouchableOpacity onPress={() => navigating(item.id)}>
-                <Text style={styles.items}>{item.name}</Text>
-              </TouchableOpacity>
-            );
-          }}
-        />
-      </View>
+      <Image
+        style={styles.img}
+        source={require("../assets/francee.png")}
+      />
+      <FlatList
+        style={styles.flatlist}
+        numColumns={2}
+        keyExtractor={(item) => item.id}
+        data={level}
+        renderItem={({item}) => {
+          return (
+            <TouchableOpacity onPress={() => navigating(item.id)}>
+              <Image style={styles.image} source={item.image} />
+            </TouchableOpacity>
+          );
+        }}
+      />
     </View>
   );
   }
 const styles = StyleSheet.create({
-  header: {
-    width: "100%",
-    height: "20%",
-  },
-  container: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    padding: 10,
-    marginBottom: 40,
-  },
-  img: {
-    width: "100%",
-    height: "100%",
+ 
+ img: {
+    marginTop: "6%",
+
     borderRadius: 15,
-    marginTop: "2%",
-    //padding: "7%",
-
-    //marginRight:0,
   },
-  list: {
-    /* display: "flex",
-    flexDirection: "column",*/
-    justifyContent: "space-between",
+
+  flatlist: {
     marginTop: "5%",
-    alignItems: "center",
+  },
+  image: {
+    marginLeft: "7%",
   },
 
-  touchable: {
-    //width: "50%",
-    marginTop: "0%",
-  },
-  items: {
-    //marginTop: 24,
-    width: 200,
-    height: 200,
-    backgroundColor: "red",
-    fontSize: 25,
-    borderWidth: 1,
-    alignItems: "center",
-  },
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: 40,
     //paddingHorizontal: 20,
     alignItems: "center",
-    justifyContent: "space-between",
-    //justifyContent: 'center',
   },
 });
 export default NextScreen;

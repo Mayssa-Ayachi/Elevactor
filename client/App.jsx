@@ -60,7 +60,7 @@ const navigator = createStackNavigator(
     ChatScreen: ChatScreen,
   },
   {
-    initialRouteName: "ChatScreen",
+    initialRouteName: "Next",
     defaultNavigationOptions: {
       title: "StartScreen",
       headerShown: false,
