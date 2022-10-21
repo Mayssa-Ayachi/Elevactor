@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
+  ScrollView,
 } from "react-native";
 import { Context } from "../context/AuthenticationContext";
 import { Text, Button } from "react-native-elements";
@@ -16,7 +17,7 @@ const SignInScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const { state, signin } = useContext(Context);
   return (
-    <View>
+    <ScrollView>
       <Image style={styles.logo} source={require("../assets/loginLogo.png")} />
 
       <Text h2 style={{ alignSelf: "center", marginTop: 20, marginBottom: 20 }}>
@@ -67,7 +68,7 @@ const SignInScreen = ({ navigation }) => {
       <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
         <Text style={styles.underlinedText}>Créer un compte</Text>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 };
 

@@ -24,7 +24,7 @@ import GameScreen from "./src/screens/GameScreen";
 import ThemeScreen from "./src/screens/ThemeScreen";
 import Language from "./src/screens/Language";
 import Thirdgame from "./src/screens/Thirdgame";
-
+import EspaceElevactorScreen from "./src/screens/EspaceElevactorScreen";
 const navigator = createStackNavigator(
   {
     SignIn: SignInScreen,
@@ -49,7 +49,8 @@ const navigator = createStackNavigator(
     Game: GameScreen,
     Language: Language,
     Theme: ThemeScreen,
-    Thirdgame:Thirdgame,
+    Thirdgame: Thirdgame,
+    EspaceElevactor: EspaceElevactorScreen,
   },
   {
     initialRouteName: "StartScreen",
