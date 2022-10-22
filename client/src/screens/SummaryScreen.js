@@ -3,11 +3,7 @@ import { StyleSheet, View , Text , ScrollView,screenWidth} from 'react-native';
 import { BarChart } from "react-native-gifted-charts";
 import { LinearGradient } from 'expo-linear-gradient';
 import Donut from '../components/Pie';
-import Creativity from '../assets/creativity.png'
-import Langues from '../assets/languages.png';
-import Mental from '../assets/mental.png';
-import Sciences from '../assets/science.png';
-
+//import {BackdropFilter ,  BackdropBlur,Fill} from '@shopify/react-native-skia';
 export default function SummaryScreen(){
 
     const barData = [
@@ -50,7 +46,13 @@ export default function SummaryScreen(){
     return (
         <View>
             <LinearGradient  colors={['#9B51B4', '#fff']} style={styles.linearGradient}>
-                <Text style={styles.text1}>PARENT</Text>
+            {/* <BackdropBlur
+        blur={4}
+        clip={{ x: 0, y: 128, width: 256, height: 128 }}
+      >
+        <Fill color="rgba(0, 0, 0, 0.2)" />
+      </BackdropBlur> */}
+            <Text style={styles.text1}>PARENT</Text>
             <Text style={styles.text}>SUMMARY</Text>
         <View
         style={{
