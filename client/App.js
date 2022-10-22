@@ -25,6 +25,10 @@ import ThemeScreen from "./src/screens/ThemeScreen";
 import Language from "./src/screens/Language";
 import Thirdgame from "./src/screens/Thirdgame";
 import EspaceElevactorScreen from "./src/screens/EspaceElevactorScreen";
+
+import Sudoku from "./src/screens/Sudoku";
+import SummaryScreen from "./src/screens/SummaryScreen";
+
 const navigator = createStackNavigator(
   {
     SignIn: SignInScreen,
@@ -49,11 +53,15 @@ const navigator = createStackNavigator(
     Game: GameScreen,
     Language: Language,
     Theme: ThemeScreen,
+
     Thirdgame: Thirdgame,
     EspaceElevactor: EspaceElevactorScreen,
+    Sudoku:Sudoku,
+    SummaryScreen : SummaryScreen,
   },
   {
-    initialRouteName: "StartScreen",
+    initialRouteName: "SummaryScreen",
+
     defaultNavigationOptions: {
       title: "StartScreen",
       headerShown: false,
