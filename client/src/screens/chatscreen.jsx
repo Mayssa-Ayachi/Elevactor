@@ -1,28 +1,55 @@
 import React from "react";
-import {Text, View, Button, StyleSheet,ImageBackground,Image} from "react-native";
+import {Text, View, Button, StyleSheet,ImageBackground,Image,TouchableOpacity} from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
 const ChatScreen = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
+        <View style={styles.both}>
+          <Text style={styles.title}> ESPACE ELEVACTOR</Text>
+
+          <TouchableOpacity>
+            <Image source={require("../assets/backimg.png")}></Image>
+          </TouchableOpacity>
+        </View>
+      </View>
       <ImageBackground
         style={styles.img}
         source={require("../assets/bckgroundchat.png")}
-        resizeMode="cover"></ImageBackground>
+        resizeMode="contain"></ImageBackground>
     </View>
   );
 };
 export default ChatScreen;
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#A364BD",
+  },
+  header: {
+    flexDirection: "row",
+    position: "relative",
+    zIndex: 1,
   },
   img: {
     width: "100%",
     height: "100%",
+  },
+  title: {
+    flex: 1,
+    textShadowColor: "rgba(0, 0, 0, 0.5)",
+    textShadowOffset: {width: 0, height: 1},
+    textShadowRadius: 20,
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "white",
+    marginTop:10,
+  },
+  both: {
+    flex: 1,
+    flexDirection: "row",
+    alignContent: "center",
+    position: "relative",
+    marginTop:10,
   },
 });
