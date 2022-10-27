@@ -5,14 +5,12 @@ import { TextInput } from "react-native-gesture-handler";
 const ChatScreen = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.both}>
-          <Text style={styles.title}> ESPACE ELEVACTOR</Text>
+      <View style={styles.both}>
+      <Text style={styles.title}> ESPACE ELEVACTOR</Text>
 
           <TouchableOpacity>
             <Image source={require("../assets/backimg.png")}></Image>
           </TouchableOpacity>
-        </View>
       </View>
       <ImageBackground
         style={styles.img}
@@ -26,14 +24,10 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#A364BD",
   },
-  header: {
-    flexDirection: "row",
-    position: "relative",
-    zIndex: 1,
-  },
   img: {
     width: "100%",
     height: "100%",
+    marginTop: "10%",
   },
   title: {
     flex: 1,
@@ -43,13 +37,13 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     color: "white",
-    marginTop:10,
+    zIndex: 10,
   },
   both: {
     flex: 1,
     flexDirection: "row",
     alignContent: "center",
-    position: "relative",
-    marginTop:10,
+    position: "absolute",
+    paddingTop: "9%",
   },
 });
