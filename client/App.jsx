@@ -28,6 +28,9 @@ import EspaceElevactorScreen from "./src/screens/EspaceElevactorScreen";
 
 import Sudoku from "./src/screens/Sudoku";
 import SummaryScreen from "./src/screens/SummaryScreen";
+import ParentlangScreen from "./src/screens/parentlang";
+import Parentnav from "./src/components/parentnav";
+import ChatScreen from "./src/screens/chatscreen";
 
 const navigator = createStackNavigator(
   {
@@ -57,7 +60,11 @@ const navigator = createStackNavigator(
     Thirdgame: Thirdgame,
     EspaceElevactor: EspaceElevactorScreen,
     Sudoku:Sudoku,
-    SummaryScreen : SummaryScreen,
+    SummaryScreen: SummaryScreen,
+     Thirdgame: Thirdgame,
+    parentlang: ParentlangScreen,
+    Parentnav: Parentnav,
+    ChatScreen: ChatScreen,
   },
   {
     initialRouteName: "SummaryScreen",
