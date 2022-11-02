@@ -67,7 +67,7 @@ const navigator = createStackNavigator(
     ChatScreen: ChatScreen,
   },
   {
-    initialRouteName: "SummaryScreen",
+    initialRouteName: "Sudoku",
 
     defaultNavigationOptions: {
       title: "StartScreen",
