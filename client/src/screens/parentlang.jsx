@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, View, StyleSheet, Image, ImageBackground} from "react-native";
+import { Text, View, StyleSheet, Image, ImageBackground } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Parentnav from "../components/parentnav";
 
@@ -9,7 +9,8 @@ const ParentlangScreen = (props) => {
       <ImageBackground
         style={styles.img}
         source={require("../../assets/backparent.png")}
-        resizeMode="cover">
+        resizeMode="cover"
+      >
         <View style={styles.total}>
           <View style={styles.all1}>
             <View>
@@ -47,7 +48,7 @@ const ParentlangScreen = (props) => {
           </View>
         </View>
         <View style={styles.footer}>
-          <Parentnav navigation={props.navigation}/>
+          {/* <Parentnav navigation={props.navigation}/> */}
         </View>
       </ImageBackground>
     </View>
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginLeft: "3%",
     marginRight: "3%",
-    marginBottom:"5%"
+    marginBottom: "5%",
   },
   total: {
     flex: 1,
@@ -119,8 +120,8 @@ const styles = StyleSheet.create({
     color: "white",
   },
   footer: {
-    marginBottom:"10%",
-  }
+    marginBottom: "10%",
+  },
   /*arabic: {
     flexDirection: "row",
     justifyContent: "flex-end",
