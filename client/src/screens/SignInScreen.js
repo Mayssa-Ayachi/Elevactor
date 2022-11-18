@@ -60,7 +60,7 @@ const SignInScreen = ({ navigation }) => {
         }
         iconPosition="right"
         onPress={
-          () => navigation.navigate("SummaryScreen")
+          () => navigation.navigate("ParentFlow")
           /*signin({ user, password }, () => navigation.navigate("StartScreen"))*/
         }
       />

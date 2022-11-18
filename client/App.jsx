@@ -35,13 +35,27 @@ import SummaryScreen from "./src/screens/SummaryScreen";
 import ParentlangScreen from "./src/screens/parentlang";
 import Parentnav from "./src/components/parentnav";
 import ChatScreen from "./src/screens/chatscreen";
+import { rgbaColor } from "@shopify/react-native-skia";
 
 const StackNavigator = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function ParentFlow() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarShowLabel: false,
+
+        tabBarStyle: {
+          shadowColor: "transparent",
+          position: "absolute",
+          borderRadius: 10000,
+          bottom: 10,
+          backgroundColor: "transparent",
+          height: 60,
+        },
+      }}
+    >
       <Tab.Screen
         options={{
           headerShown: false,
@@ -56,11 +70,11 @@ function ParentFlow() {
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => {
-            return <Image source={require("./assets/tof2.png")} />;
+            return <Image source={require("./assets/tf2.png")} />;
           },
         }}
         name="languageProgress"
-        component={EspaceElevactorScreen}
+        component={ParentlangScreen}
       />
       <Tab.Screen
         options={{
@@ -70,17 +84,21 @@ function ParentFlow() {
           },
         }}
         name="Contacts"
-        component={ParentlangScreen}
+        component={EspaceElevactorScreen}
       />
       <Tab.Screen
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => {
-            return <Image source={require("./assets/tof4.png")} />;
+            return focused ? (
+              <Image source={require("./assets/tf2.png")} />
+            ) : (
+              <Image source={require("./assets/tof4.png")} />
+            );
           },
         }}
         name="Contacsts"
-        component={ChatScreen}
+        component={EnseignantScreen}
       />
     </Tab.Navigator>
   );
@@ -90,13 +108,18 @@ function MainFlow() {
     <StackNavigator.Navigator defaultScreenOptions={{ headerShown: false }}>
       <StackNavigator.Screen
         options={{ headerShown: false }}
-        name="ParentFlow"
-        component={ParentFlow}
+        name="StartScreen"
+        component={StartScreen}
       />
       <StackNavigator.Screen
         options={{ headerShown: false }}
-        name="SignInScreen"
+        name="SignIn"
         component={SignInScreen}
+      />
+      <StackNavigator.Screen
+        options={{ headerShown: false }}
+        name="ParentFlow"
+        component={ParentFlow}
       />
       <StackNavigator.Screen
         options={{ headerShown: false }}
@@ -108,11 +131,7 @@ function MainFlow() {
         name="SubTheme"
         component={SubTheme}
       />
-      <StackNavigator.Screen
-        options={{ headerShown: false }}
-        name="StartScreen"
-        component={StartScreen}
-      />
+
       <StackNavigator.Screen
         options={{ headerShown: false }}
         name="Enseignant"
@@ -232,6 +251,11 @@ function MainFlow() {
         options={{ headerShown: false }}
         name="Parentnav"
         component={Parentnav}
+      />
+      <StackNavigator.Screen
+        options={{ headerShown: false }}
+        name="Code"
+        component={CodeVerif}
       />
     </StackNavigator.Navigator>
   );

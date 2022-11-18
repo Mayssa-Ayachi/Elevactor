@@ -17,7 +17,11 @@ const ParentlangScreen = (props) => {
               <Text style={styles.textlang}>PARENT</Text>
             </View>
             <View style={styles.fleche}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  props.navigation.goBack();
+                }}
+              >
                 <Image source={require("../assets/parentflech.png")}></Image>
               </TouchableOpacity>
             </View>

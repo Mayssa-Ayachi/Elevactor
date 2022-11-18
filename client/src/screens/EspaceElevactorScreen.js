@@ -25,7 +25,12 @@ const EspaceElevactorScreen = (props) => {
         resizeMode="cover"
         style={styles.background}
       >
-        <TouchableOpacity style={styles.nav} >
+        <TouchableOpacity
+          style={styles.nav}
+          onPress={() => {
+            props.navigation.goBack();
+          }}
+        >
           <Ionicons
             name="arrow-back-circle-outline"
             size={50}
@@ -40,18 +45,28 @@ const EspaceElevactorScreen = (props) => {
           />
           <Text style={styles.headerText}>Espace Elevactor</Text>
         </View>
-        <Chat name="Si Foulen" photoNumber={0} />
-        <Chat name="Folen el Folen" photoNumber={1} />
-        <Chat name="Folena el Folena" photoNumber={2} />
-        <Chat name="Folen el Foulen" photoNumber={3} />
-        
+        <Chat navigation={props.navigation} name="Si Foulen" photoNumber={0} />
+        <Chat
+          navigation={props.navigation}
+          name="Folen el Folen"
+          photoNumber={1}
+        />
+        <Chat
+          navigation={props.navigation}
+          name="Folena el Folena"
+          photoNumber={2}
+        />
+        <Chat
+          navigation={props.navigation}
+          name="Folen el Foulen"
+          photoNumber={3}
+        />
       </ImageBackground>
-      
     </View>
   );
 };
 export default EspaceElevactorScreen;
-const Chat = ({ name, photoNumber }) => {
+const Chat = ({ name, photoNumber, navigation }) => {
   return (
     <TouchableOpacity
       style={{
@@ -61,6 +76,9 @@ const Chat = ({ name, photoNumber }) => {
         padding: 10,
         borderBottomColor: "white",
         borderBottomWidth: 1,
+      }}
+      onPress={() => {
+        navigation.navigate("ChatScreen");
       }}
     >
       <Image
@@ -98,7 +116,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginRight: 20,
   },
-  
+
   header: {
     marginTop: 50,
     height: "10%",
