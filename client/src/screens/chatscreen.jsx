@@ -15,7 +15,8 @@ const ChatScreen = () => {
       <ImageBackground
         style={styles.img}
         source={require("../assets/bckgroundchat.png")}
-        resizeMode="contain"></ImageBackground>
+        >
+        </ImageBackground>
     </View>
   );
 };
@@ -27,7 +28,6 @@ const styles = StyleSheet.create({
   img: {
     width: "100%",
     height: "100%",
-    marginTop: "10%",
   },
   title: {
     flex: 1,

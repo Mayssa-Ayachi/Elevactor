@@ -3,7 +3,7 @@ import {Text, View, StyleSheet, Image, ImageBackground} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Parentnav from "../components/parentnav";
 
-const ParentlangScreen = () => {
+const ParentlangScreen = (props) => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -47,7 +47,7 @@ const ParentlangScreen = () => {
           </View>
         </View>
         <View style={styles.footer}>
-          <Parentnav />
+          <Parentnav navigation={props.navigation}/>
         </View>
       </ImageBackground>
     </View>

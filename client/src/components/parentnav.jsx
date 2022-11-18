@@ -1,7 +1,7 @@
 import React from "react";
-import {Text, View, StyleSheet,TouchableOpacity,Image} from "react-native";
+import {View, StyleSheet,TouchableOpacity,Image} from "react-native";
 
-const Parentnav = () => {
+const Parentnav = (props) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
@@ -10,7 +10,9 @@ const Parentnav = () => {
       <TouchableOpacity>
         <Image source={require("../assets/tf2.png")}></Image>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={
+          () => props.navigation.navigate("EspaceElevactor")
+        }>
         <Image source={require("../assets/tof3.png")}></Image>
       </TouchableOpacity>
       <TouchableOpacity>

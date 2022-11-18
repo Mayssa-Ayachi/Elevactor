@@ -61,13 +61,12 @@ const navigator = createStackNavigator(
     EspaceElevactor: EspaceElevactorScreen,
     Sudoku:Sudoku,
     SummaryScreen: SummaryScreen,
-     Thirdgame: Thirdgame,
     parentlang: ParentlangScreen,
     Parentnav: Parentnav,
     ChatScreen: ChatScreen,
   },
   {
-    initialRouteName: "Sudoku",
+    initialRouteName: "parentlang",
 
     defaultNavigationOptions: {
       title: "StartScreen",

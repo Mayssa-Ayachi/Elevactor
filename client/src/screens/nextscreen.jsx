@@ -30,7 +30,7 @@ const NextScreen = ({navigation}) => {
         navigation.navigate("Game");
         break;
       case "b":
-        navigation.navigate("level2");
+        navigation.navigate("Sudoku");
         break;
       case "c":
         navigation.navigate("Thirdgame");

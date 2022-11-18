@@ -9,13 +9,15 @@ import {
 import { ImageBackground } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Image } from "react-native";
+import Parentnav from "../components/parentnav";
+
 const images = [
   require(`../assets/Avatar1.png`),
   require(`../assets/Avatar2.png`),
   require(`../assets/Avatar3.png`),
   require(`../assets/Avatar4.png`),
 ];
-const EspaceElevactorScreen = () => {
+const EspaceElevactorScreen = (props) => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -23,7 +25,7 @@ const EspaceElevactorScreen = () => {
         resizeMode="cover"
         style={styles.background}
       >
-        <TouchableOpacity style={styles.nav}>
+        <TouchableOpacity style={styles.nav} >
           <Ionicons
             name="arrow-back-circle-outline"
             size={50}
@@ -42,7 +44,9 @@ const EspaceElevactorScreen = () => {
         <Chat name="Folen el Folen" photoNumber={1} />
         <Chat name="Folena el Folena" photoNumber={2} />
         <Chat name="Folen el Foulen" photoNumber={3} />
+        
       </ImageBackground>
+      
     </View>
   );
 };
@@ -94,6 +98,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginRight: 20,
   },
+  
   header: {
     marginTop: 50,
     height: "10%",
