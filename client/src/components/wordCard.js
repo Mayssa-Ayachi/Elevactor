@@ -1,29 +1,27 @@
-import React from "react";
-import { View,Image,Text } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Text, TouchableOpacity } from "react-native";
 import { StyleSheet } from "react-native";
 
-const WordCard = (props)=>{
+const WordCard = ({label,newColor})=>{
     return(
-        <View style={styles.container}>
-            <Text style={styles.text}>{props.label}</Text>
-        </View>
+        <TouchableOpacity style={{...styles.containerr,backgroundColor:newColor}}>
+            <Text style={styles.text}>{label}</Text>
+        </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
-    container : {
-        backgroundColor :'#D9D9D9',
+    containerr : {
+        marginTop:'2%',
         borderRadius:17,
-        justifyContent:'center',
-        alignContent:'center',
-        width:140,
-        height:38,
-        margin :'1%'
+        width:'40%',
+        height:'25%',
     },
     text :{
         fontSize:15,
         textAlign:'center',
-        fontWeight:'700'
+        fontWeight:'700',
+        marginTop:'1%'
     }
 })
 
