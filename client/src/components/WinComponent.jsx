@@ -2,18 +2,17 @@ import React from 'react';
 import {View,Text,StyleSheet,Image,TouchableOpacity} from 'react-native';
 import { Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useTransition } from 'react';
 const {width, height} = Dimensions.get('screen');
 
 
-function WinComponent()
+function WinComponent({navigate})
 {
-    console.log(`${width}/${height}`)
     return (    
             <View style={styles.view}>
         <Image source={require("../assets/water.png")} />
         <Text style={styles.text}>Bravo mon Héro</Text>
-        <TouchableOpacity style={{width:"50%",height:"20%"}}>
+        <TouchableOpacity style={{width:"50%",height:"20%"}} onPress={
+          () => navigate("SubTheme")} >
         <LinearGradient
         colors={['#5E77FF', '#3DDBFE']}
         start={{x: 0, y: 0}}

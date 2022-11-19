@@ -1,19 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Dimensions } from "react-native";
+import { Dimensions, View } from "react-native";
 import { Text, Group, RoundedRect, useComputedValue, SkiaMutableValue, useValue } from "@shopify/react-native-skia";
 
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 const SQUARES_AMOUNT_HORIZONTAL = 7;
 const SQUARE_CONTAINER_SIZE = SCREEN_WIDTH / SQUARES_AMOUNT_HORIZONTAL;
-const PADDING = SQUARE_CONTAINER_SIZE / 20;
+const PADDING = SQUARE_CONTAINER_SIZE / 10;
 const SQUARE_SIZE = SQUARE_CONTAINER_SIZE - PADDING;
 const SQUARES_AMOUNT_VERTICAL = Math.floor(SCREEN_HEIGHT / SQUARE_CONTAINER_SIZE) - 3;
 
 
 function Word({ i, j, elem, font, point, pressed, word, randomColor, color }) {
     const x = i * (SQUARE_SIZE + PADDING) + (PADDING / 2);
-    const y = j  * (SQUARE_SIZE + PADDING);
+    const y = j  * (SQUARE_SIZE + PADDING)+(SQUARE_SIZE/10);
     if (font === null) {
         return null;
     }
@@ -36,20 +36,18 @@ function Word({ i, j, elem, font, point, pressed, word, randomColor, color }) {
                     word.current.push(`${i} ${j}`);
                     pressed.current[i][j] = true;
                     color[i][j] = { red: Math.round((color[i][j].red + randomColor.red) / 2), blue: Math.round((color[i][j].blue + randomColor.blue) / 2), green: Math.round((color[i][j].green + randomColor.green) / 2) }
-                    console.log(`${i} ${j}+`)
                 }
             }
             else {
                 word.current.push(`${i} ${j}`);
                 pressed.current[i][j] = true;
                 color[i][j] = { red: Math.round((color[i][j].red + randomColor.red) / 2), blue: Math.round((color[i][j].blue + randomColor.blue) / 2), green: Math.round((color[i][j].green + randomColor.green) / 2) }
-                console.log(`${i} ${j}+`)
             }
         }
     }
     const houwa = `rgb(${color[i][j].red},${color[i][j].blue},${color[i][j].green})`
     return (
-        <Group >
+            <Group >
             <RoundedRect width={SQUARE_SIZE}
                 height={SQUARE_SIZE}
                 x={x} y={y}
