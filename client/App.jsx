@@ -97,7 +97,7 @@ function ParentFlow() {
             );
           },
         }}
-        name="Contacts"
+        name="extra"
         component={EnseignantScreen}
       />
     </Tab.Navigator>
@@ -106,15 +106,15 @@ function ParentFlow() {
 function MainFlow() {
   return (
     <StackNavigator.Navigator defaultScreenOptions={{ headerShown: false }}>
-            <StackNavigator.Screen
-        options={{ headerShown: false }}
-        name="Sudoku"
-        component={Sudoku}
-      />
       <StackNavigator.Screen
         options={{ headerShown: false }}
         name="StartScreen"
         component={StartScreen}
+      />
+      <StackNavigator.Screen
+        options={{ headerShown: false }}
+        name="Sudoku"
+        component={Sudoku}
       />
       <StackNavigator.Screen
         options={{ headerShown: false }}
@@ -257,7 +257,6 @@ function MainFlow() {
         name="Code"
         component={CodeVerif}
       />
-
     </StackNavigator.Navigator>
   );
 }
