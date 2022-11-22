@@ -2,21 +2,23 @@ import React from "react";
 import {Text, View, Button, StyleSheet,ImageBackground,Image,TouchableOpacity} from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
-const ChatScreen = () => {
+const ChatScreen = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.both}>
-      <Text style={styles.title}> ESPACE ELEVACTOR</Text>
+        <Text style={styles.title}> ESPACE ELEVACTOR</Text>
 
-          <TouchableOpacity>
-            <Image source={require("../assets/backimg.png")}></Image>
-          </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.goBack();
+          }}>
+          <Image source={require("../assets/backimg.png")}></Image>
+        </TouchableOpacity>
       </View>
       <ImageBackground
+        resizeMode="stretch"
         style={styles.img}
-        source={require("../assets/bckgroundchat.png")}
-        >
-        </ImageBackground>
+        source={require("../assets/bckgroundchat.png")}></ImageBackground>
     </View>
   );
 };
@@ -27,7 +29,8 @@ const styles = StyleSheet.create({
   },
   img: {
     width: "100%",
-    height: "100%",
+    height: "95%",
+    marginTop:"21%",
   },
   title: {
     flex: 1,
