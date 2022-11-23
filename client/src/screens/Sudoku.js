@@ -78,7 +78,7 @@ const Sudoku = ({navigation}) => {
             </TouchableOpacity>
             </View>
                 </View>
-                <TouchableOpacity style={{width:"60%",alignSelf:'center',marginBottom:'1%'}}>
+                <TouchableOpacity style={{width:"60%",alignSelf:'center',marginBottom:'2%'}}>
                 <LinearGradient
         colors={['#C20232', '#7E0080']}
         start={{x: 0, y: 0}}
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     flexWrap:'wrap',
     justifyContent:'space-around',
     alignSelf:'center',
-    height:'18%'
+    height:'23%'
     },
     container: {
         flex: 1,

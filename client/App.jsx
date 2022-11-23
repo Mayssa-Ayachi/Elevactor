@@ -111,7 +111,7 @@ function MainFlow() {
         name="StartScreen"
         component={StartScreen}
       />
-      <StackNavigator.Screen
+                  <StackNavigator.Screen
         options={{headerShown: false}}
         name="Sudoku"
         component={Sudoku}

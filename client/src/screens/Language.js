@@ -2,7 +2,7 @@ import React from 'react';
 import {Image,StyleSheet,ImageBackground} from 'react-native';
 import TouchableImage from '../components/TouchableImage';
 
-const Language = (props) => {
+const Language = ({navigation}) => {
   return (
         <ImageBackground 
         source={require("../assets/background.png")} 
@@ -10,9 +10,9 @@ const Language = (props) => {
          >
             <Image source={require("../assets/ele.png")} style={styles.pic} />
             <TouchableImage source={require("../assets/ar.png")} style={styles.pic}
-                navigate={()=>props.navigation.navigate("Theme",{pre:"اللغات",deu:"التطوير",troi:"العلوم",qua:"الفن",fr:false})} />
+                navigate={()=>navigation.navigate("Theme",{pre:"اللغات",deu:"التطوير",troi:"العلوم",qua:"الفن",fr:false})} />
             <TouchableImage source={require("../assets/fr.png")} style={styles.pic}
-                navigate={()=>props.navigation.navigate("Theme",{pre:"Langue",deu:"Developpement",troi:"Science",qua:"Art",fr:true})} />
+                navigate={()=>navigation.navigate("Theme",{pre:"Langue",deu:"Developpement",troi:"Science",qua:"Art",fr:true})} />
         </ImageBackground>
   )
 };
