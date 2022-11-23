@@ -1,10 +1,12 @@
 import React, {useState, useRef } from "react";
 import { Canvas, useFont, Group, useTouchHandler } from "@shopify/react-native-skia";
-import { StyleSheet, View,Image, TouchableOpacity,Text } from "react-native";
+import { StyleSheet, View,Image, TouchableOpacity,Text,Dimensions } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import Word from "../components/Word";
 import WordCard from "../components/wordCard";
 import WinComponent from "../components/WinComponent";
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+const flex= (SCREEN_HEIGHT>650) ? 0.735 : 1;
 const labelGame=['AIR','NATURE','TERRE','ARBRE','MARCHER','EAU']
 const game=['AIR','NATURE','TERRE','ARBRE','MARCHER','EAU']
 const list = [['T', 'R', 'Y', 'W', 'X', 'K', 'M'], ['E', 'R', 'U', 'T', 'A', 'N', 'A'], ['R', 'R', 'R', 'R', 'R', 'U', 'R'], ['R', 'R', 'B', 'B', 'B', 'B', 'C'], ['E', 'E', 'A', 'I', 'R', 'R', 'H'], ['Z', 'E', 'A', 'U', 'E', 'A', 'E'], ['X', 'A', 'D', 'F', 'H', 'K', 'R']];
@@ -15,6 +17,8 @@ const hh=[[{red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,
 [{red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}], [{red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255},{red:255,blue:255,green:255}], [{red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}],
 [{red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}, {red:255,blue:255,green:255}]];
 const Sudoku = ({navigation}) => {
+    console.log(SCREEN_HEIGHT);
+    console.log(flex);
     let time = 0;
     let prevPoint;
     const word = useRef([]);
@@ -86,7 +90,7 @@ const Sudoku = ({navigation}) => {
             <Text style={styles.textbutton}>Trouvez les mots !</Text>
         </LinearGradient>
         </TouchableOpacity>
-           <View style={{ flex: 1,backgroundColor:'black',paddingVertical:0}} >
+           <View style={{ flex: flex,backgroundColor:'black'}} >
            <Canvas style={{flex:1}} onTouch={(game.length===0)?null:touchHandler} >
                 <Group >
                     {list.map((array, i) => array.map((elem, j) => {
@@ -105,7 +109,7 @@ const Sudoku = ({navigation}) => {
                 )})
             }
             </View>
-            {(game.length===0) ?<WinComponent navigate={navigation.navigate} />: null}
+            {(game.length===0) ?<WinComponent navigation={navigation} />: null}
         </View>
     );
 }
@@ -116,10 +120,11 @@ const styles = StyleSheet.create({
     flexWrap:'wrap',
     justifyContent:'space-around',
     alignSelf:'center',
-    height:'23%'
+    height:'17.5%'
     },
     container: {
         flex: 1,
+        justifyContent:'space-around'
     },
     text: {
         backgroundColor: 'red',
