@@ -105,155 +105,155 @@ function ParentFlow() {
 }
 function MainFlow() {
   return (
-    <StackNavigator.Navigator defaultScreenOptions={{headerShown: false}}>
+    <StackNavigator.Navigator defaultScreenOptions={{ headerShown: false }}>
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="StartScreen"
         component={StartScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="SignIn"
         component={SignInScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="ParentFlow"
         component={ParentFlow}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="SignUp"
         component={SignUpScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="SubTheme"
         component={SubTheme}
       />
 
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Enseignant"
         component={EnseignantScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Parent"
         component={ParentScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Eleve"
         component={EleveScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Loading"
         component={LoadingScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Next"
         component={NextScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="level1"
         component={Level1Screen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="level2"
         component={Level2Screen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Sudoku"
         component={Sudoku}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="level4"
         component={Level4Screen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="level5"
         component={Level5Screen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="level6"
         component={Level6Screen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="level7"
         component={Level7Screen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="level8"
         component={Level8Screen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="level9"
         component={Level9Screen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="level10"
         component={Level10Screen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Game"
         component={GameScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Language"
         component={Language}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Theme"
         component={ThemeScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Thirdgame"
         component={Thirdgame}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="EspaceElevactor"
         component={EspaceElevactorScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="SummaryScreen"
         component={SummaryScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="parentlang"
         component={ParentlangScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="ChatScreen"
         component={ChatScreen}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Parentnav"
         component={Parentnav}
       />
       <StackNavigator.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Code"
         component={CodeVerif}
       />
