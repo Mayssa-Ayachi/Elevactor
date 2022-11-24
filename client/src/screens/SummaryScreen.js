@@ -120,5 +120,6 @@ const styles = StyleSheet.create({
   },
   container: {
     margin :'10%'
+    
   }
 })
