@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
   img: {
     width: "100%",
-    height: "95%",
+    height: "94%",
     marginTop:"21%",
   },
   title: {
