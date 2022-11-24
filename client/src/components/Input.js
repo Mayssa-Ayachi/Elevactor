@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         position:'absolute',
         marginTop:'80%',
-        marginLeft:'20%'
+        marginLeft:'15%'
         
     },
     input :{
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
         paddingLeft:'5%',
         paddingTop:'3%',
         paddingBottom:'3%',
-        margin:'5%',
-
+        marginTop:'5%',
+        marginBottom:'5%'
     },
     text :{
         textAlign:'center',
