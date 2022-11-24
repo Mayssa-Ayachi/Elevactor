@@ -7,9 +7,6 @@ const EnseignantScreen = ({navigation}) => {
       <Text>Teachers Login Page</Text>
       <Button
         title="Continue"
-        onPress={() => {
-          navigation.navigate("Loading");
-        }}
       />
     </View>
   );
