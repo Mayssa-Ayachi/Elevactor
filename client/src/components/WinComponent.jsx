@@ -5,14 +5,14 @@ import { LinearGradient } from 'expo-linear-gradient';
 const {width, height} = Dimensions.get('screen');
 
 
-function WinComponent({navigate})
+function WinComponent({navigation})
 {
     return (    
             <View style={styles.view}>
         <Image source={require("../assets/water.png")} />
         <Text style={styles.text}>Bravo mon Héro</Text>
         <TouchableOpacity style={{width:"50%",height:"20%"}} onPress={
-          () => navigate("SubTheme")} >
+          () => navigation.navigate("SubTheme")} >
         <LinearGradient
         colors={['#5E77FF', '#3DDBFE']}
         start={{x: 0, y: 0}}

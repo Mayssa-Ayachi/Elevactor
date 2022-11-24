@@ -1,14 +1,14 @@
 import React from 'react';
 import {Text,TouchableOpacity,Image,View,StyleSheet} from 'react-native';
 
-function ThemeComponent(props)
-{console.log(props.fr)
+function ThemeComponent({navigation,color,borderColor,source,text,fr})
+{
     return (
-        <View style={{...styles.top,backgroundColor: props.color, borderColor: props.borderColor }}>
-    <TouchableOpacity onPress={()=>(props.fr===true) ?props.navigation.navigate("SubTheme"):console.log("failed")} >
+        <View style={{...styles.top,backgroundColor: color, borderColor: borderColor }}>
+    <TouchableOpacity onPress={()=>(fr===true) ?navigation.navigate("SubTheme"):console.log("failed")} >
             <View style={{alignItems:"center",resizeMode:"cover"}} >
-        <Image source={props.source} style={styles.pic} />
-        <Text style={styles.text}>{props.text}</Text>
+        <Image source={source} style={styles.pic} />
+        <Text style={styles.text}>{text}</Text>
             </View>
           </TouchableOpacity>
           </View>)       

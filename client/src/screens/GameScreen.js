@@ -4,7 +4,7 @@ import ButtonComponent from "../components/ButtonComponent";
 import WinComponent from "../components/WinComponent";
 /* Game1 */
 
-function GameScreen() {
+function GameScreen({navigation}) {
     useEffect(()=>{styles.button={...styles.button,backgroundColor:'#EAEAFF'}})
     const phrase="l’eau de la planet est de plus en plus rare";
     const [tab1, setTab1] = useState(["de plus en plus rare", "est", "l’eau de la planet"]);
@@ -48,7 +48,7 @@ function GameScreen() {
             </View>
         </View>
         {(win) ? gagner(setShowComponent) : null }  
-        {(showComponent) ?<WinComponent />: null}
+        {(showComponent) ?<WinComponent navigation={navigation} />: null}
 
         </View>
     )
