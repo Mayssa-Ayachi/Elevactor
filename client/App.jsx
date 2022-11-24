@@ -106,11 +106,6 @@ function ParentFlow() {
 function MainFlow() {
   return (
     <StackNavigator.Navigator defaultScreenOptions={{headerShown: false}}>
-                        <StackNavigator.Screen
-        options={{headerShown: false}}
-        name="Sudoku"
-        component={Sudoku}
-      />
       <StackNavigator.Screen
         options={{headerShown: false}}
         name="StartScreen"
@@ -171,6 +166,11 @@ function MainFlow() {
         options={{headerShown: false}}
         name="level2"
         component={Level2Screen}
+      />
+      <StackNavigator.Screen
+        options={{headerShown: false}}
+        name="Sudoku"
+        component={Sudoku}
       />
       <StackNavigator.Screen
         options={{headerShown: false}}
