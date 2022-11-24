@@ -35,6 +35,7 @@ import SummaryScreen from "./src/screens/SummaryScreen";
 import ParentlangScreen from "./src/screens/parentlang";
 import Parentnav from "./src/components/parentnav";
 import ChatScreen from "./src/screens/chatscreen";
+import Loading from "./src/screens/loaading1";
 import { rgbaColor } from "@shopify/react-native-skia";
 
 const StackNavigator = createStackNavigator();
@@ -107,7 +108,16 @@ function MainFlow() {
   return (
     <StackNavigator.Navigator defaultScreenOptions={{ headerShown: false }}>
       <StackNavigator.Screen
+<<<<<<< Updated upstream
         options={{ headerShown: false }}
+=======
+        options={{headerShown: false}}
+        name="Loading1"
+        component={Loading}
+      />
+      <StackNavigator.Screen
+        options={{headerShown: false}}
+>>>>>>> Stashed changes
         name="StartScreen"
         component={StartScreen}
       />
