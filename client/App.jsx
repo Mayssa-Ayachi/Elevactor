@@ -108,16 +108,12 @@ function MainFlow() {
   return (
     <StackNavigator.Navigator defaultScreenOptions={{ headerShown: false }}>
       <StackNavigator.Screen
-<<<<<<< Updated upstream
-        options={{ headerShown: false }}
-=======
         options={{headerShown: false}}
         name="Loading1"
         component={Loading}
       />
       <StackNavigator.Screen
         options={{headerShown: false}}
->>>>>>> Stashed changes
         name="StartScreen"
         component={StartScreen}
       />
