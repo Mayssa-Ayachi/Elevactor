@@ -4,10 +4,6 @@ import {Text, View, Button, StyleSheet} from "react-native";
 const EnseignantScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Text>Teachers Login Page</Text>
-      <Button
-        title="Continue"
-      />
     </View>
   );
 };
