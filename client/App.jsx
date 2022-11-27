@@ -91,11 +91,7 @@ function ParentFlow() {
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => {
-            return focused ? (
-              <Image source={require("./assets/tf2.png")} />
-            ) : (
-              <Image source={require("./assets/tof4.png")} />
-            );
+            return <Image source={require("./assets/garconp.png")} />;
           },
         }}
         name="extra"
@@ -107,11 +103,6 @@ function ParentFlow() {
 function MainFlow() {
   return (
     <StackNavigator.Navigator defaultScreenOptions={{ headerShown: false }}>
-      <StackNavigator.Screen
-        options={{headerShown: false}}
-        name="Loading1"
-        component={Loading}
-      />
       <StackNavigator.Screen
         options={{headerShown: false}}
         name="StartScreen"
