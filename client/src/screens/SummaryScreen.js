@@ -3,6 +3,7 @@ import { StyleSheet, View , Text , ScrollView,screenWidth} from 'react-native';
 import { BarChart } from "react-native-gifted-charts";
 import { LinearGradient } from 'expo-linear-gradient';
 import Donut from '../components/Pie';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 //import {BackdropFilter ,  BackdropBlur,Fill} from '@shopify/react-native-skia';
 export default function SummaryScreen(){
 
@@ -78,9 +79,11 @@ export default function SummaryScreen(){
         />
         </View>
         <ScrollView horizontal={true} style={styles.scroll}>
-                    {data.map((p, i) => {
-                        return <Donut key={i} percentage={p.percentage} color={p.color} delay={500 + 100 * i} max={p.max} text={p.text} image={p.image}/>
+          
+            {data.map((p, i) => {
+              return <Donut key={i} percentage={p.percentage} color={p.color} delay={500 + 100 * i} max={p.max} text={p.text} image={p.image}/>
                         })}
+                     
         </ScrollView>
         </LinearGradient>
         </View>

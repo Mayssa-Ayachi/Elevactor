@@ -44,9 +44,9 @@ const Tab = createBottomTabNavigator();
 function ParentFlow() {
   return (
     <Tab.Navigator
+    initialRouteName="SummaryScreen"
       screenOptions={{
         tabBarShowLabel: false,
-
         tabBarStyle: {
           shadowColor: "transparent",
           position: "absolute",
@@ -64,24 +64,33 @@ function ParentFlow() {
             return <Image source={require("./assets/tof1.png")} />;
           },
         }}
-        name="SummaryScreen"
-        component={SummaryScreen}
+        name="pay"
+        component={EnseignantScreen}
       />
       <Tab.Screen
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => {
-            return <Image source={require("./assets/tf2.png")} />;
+            return focused ? (
+              <Image source={require("./assets/tf2.png")} />
+            ) : (
+              <Image source={require("./assets/lev.png")} />
+            );
           },
         }}
-        name="languageProgress"
-        component={ParentlangScreen}
+        name="SummaryScreen"
+        component={SummaryScreen}
+         
       />
       <Tab.Screen
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => {
-            return <Image source={require("./assets/tof3.png")} />;
+            return focused ? (
+              <Image source={require("./assets/mess.png")} />
+            ) : (
+              <Image source={require("./assets/tof3.png")} />
+            );
           },
         }}
         name="Contacts"

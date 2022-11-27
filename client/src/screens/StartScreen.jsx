@@ -13,7 +13,7 @@ const StartScreen = ( { navigation } ) => {
         <View style={styles.contenue}>
           <TouchableOpacity
             style={styles.toucheable}
-            onPress={() => navigation.navigate("Enseignant")}>
+            onPress={() => navigation.navigate("SignIn")}>
             <Image
               style={styles.Image1}
               source={require("../../assets/enseignant.jpg")}
