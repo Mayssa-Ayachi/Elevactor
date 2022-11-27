@@ -35,7 +35,6 @@ import SummaryScreen from "./src/screens/SummaryScreen";
 import ParentlangScreen from "./src/screens/parentlang";
 import Parentnav from "./src/components/parentnav";
 import ChatScreen from "./src/screens/chatscreen";
-import Loading from "./src/screens/loaading1";
 import { rgbaColor } from "@shopify/react-native-skia";
 
 const StackNavigator = createStackNavigator();
