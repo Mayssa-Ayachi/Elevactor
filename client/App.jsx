@@ -103,11 +103,6 @@ function ParentFlow() {
 function MainFlow() {
   return (
     <StackNavigator.Navigator defaultScreenOptions={{ headerShown: false }}>
-      {/* <StackNavigator.Screen
-        options={{headerShown: false}}
-        name="Loading1"
-        component={Loading}
-      /> */}
       <StackNavigator.Screen
         options={{headerShown: false}}
         name="StartScreen"
