@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, View, StyleSheet, Image, ImageBackground } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import Parentnav from "../components/parentnav";
 
 const ParentlangScreen = (props) => {
   return (

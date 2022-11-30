@@ -1,17 +1,12 @@
 import * as React from 'react';
 import {
   Image,
-  TextInput,
   Animated,
   Text,
   View,
   StyleSheet,
 } from 'react-native';
-
 import Svg, { G, Circle} from 'react-native-svg';
-
-const AnimatedCircle = Animated.createAnimatedComponent(Circle);
-const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
 export default function Donut({
   percentage = 75,
@@ -107,7 +102,7 @@ export default function Donut({
 }
 
 const styles = StyleSheet.create({
-  text: { fontWeight: '500', textAlign: 'center' , marginTop:50},
+  text: { fontWeight: '600', textAlign: 'center' , marginTop:55,fontFamily:'Roboto',fontSize:15},
   image  : {
     width : 33,
     height : 33,

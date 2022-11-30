@@ -1,9 +1,8 @@
 import React from "react";
-import { FlatList , View , Image } from "react-native";
+import { FlatList } from "react-native";
 import LangCard from "../components/LangCard";
 import NavBar from "../components/NavBar";
 import { StyleSheet } from "react-native";
-import { useLinkProps } from "@react-navigation/native";
 
 const DATA = [
     {
